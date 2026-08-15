@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luora — Koreańska pielęgnacja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  @font-face {
+    font-family: 'Cooper Hewitt';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@5.2.5/latin-400-normal.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Cooper Hewitt';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@5.2.5/latin-700-normal.woff2) format('woff2');
+  }
+
+  :root{
+    --ink:#1A1A18;
+    --ink-2:#2E2D2A;
+    --ivory:#F5F2EC;
+    --ivory-dim:#EDE8DF;
+    --gold:#C4A882;
+    --gray:#7A776E;
+    --sand:#D9C9B0;
+
+    --display: 'Cooper Hewitt', 'Futura', 'Century Gothic', sans-serif;
+    --body: 'Montserrat', sans-serif;
+
+    --section-pad: clamp(64px, 10vw, 140px);
+    --container: 1240px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:var(--body);
+    font-weight:400;
+    font-size:14px;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+
+  .wrap{
+    max-width:var(--container);
+    margin:0 auto;
+    padding-left:clamp(20px, 5vw, 56px);
+    padding-right:clamp(20px, 5vw, 56px);
+  }
+
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:500;
+    font-size:10px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
+  .eyebrow.on-ivory{ color:var(--gold); }
+  .eyebrow.on-ink{ color:var(--gold); }
+
+  h1,h2,h3{
+    font-family:var(--display);
+    font-weight:700;
+    letter-spacing:0.005em;
+  }
+  h1{ font-size:clamp(2.4rem, 5.6vw, 3.7rem); font-weight:700; line-height:1.05; }
+  h2{ font-size:clamp(1.7rem, 3.4vw, 2.15rem); font-weight:400; line-height:1.18; }
+  h3{ font-family:var(--body); font-weight:400; font-size:1.3rem; line-height:1.4; }
+
+  p{ font-weight:300; color:var(--gray); max-width:46ch; }
+  p.on-ink{ color:#C8C4B8; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:var(--body);
+    font-weight:500;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    padding:16px 28px;
+    border:1px solid currentColor;
+    transition:background .25s ease, color .25s ease;
+  }
+  .btn.dark{ color:var(--ivory); }
+  .btn.dark:hover{ background:var(--ivory); color:var(--ink); }
+  .btn.light{ color:var(--ink); }
+  .btn.light:hover{ background:var(--ink); color:var(--ivory); }
+  .btn svg{ width:14px; height:14px; transition:transform .25s ease; }
+  .btn:hover svg{ transform:translateX(4px); }
+
+  /* ---------- placard / section numbering (signature device) ---------- */
+  .placard{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .placard .num{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:5px 10px;
+  }
+  .placard .label{
+    font-size:10px;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    color:var(--gray);
+  }
+  section.on-ink .placard .label{ color:#9E9B92; }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  /* ================= NAV ================= */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(245,242,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled{ border-color:var(--sand); box-shadow:0 6px 24px -18px rgba(26,26,24,0.4); }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:22px; padding-bottom:22px;
+  }
+  .wordmark{
+    font-family:var(--display); font-weight:700; font-size:20px;
+    letter-spacing:0.06em;
+  }
+  .nav-links{ display:flex; align-items:center; gap:38px; }
+  .nav-links a{
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    font-weight:500; position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--ink); transform:scaleX(0); transform-origin:right;
+    transition:transform .3s ease;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1); transform-origin:left; }
+  .nav-cta{
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:500;
+    border:1px solid var(--ink); padding:10px 18px;
+    transition:background .25s, color .25s;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--ivory); }
+  .burger{ display:none; width:22px; height:16px; position:relative; cursor:pointer; z-index:60; }
+  .burger span{ position:absolute; left:0; right:0; height:1.5px; background:var(--ink); transition:.3s; }
+  .burger span:nth-child(1){ top:0; }
+  .burger span:nth-child(2){ top:7px; }
+  .burger span:nth-child(3){ top:14px; }
+  .burger.open span:nth-child(1){ top:7px; transform:rotate(45deg); }
+  .burger.open span:nth-child(2){ opacity:0; }
+  .burger.open span:nth-child(3){ top:7px; transform:rotate(-45deg); }
+
+  @media (max-width:900px){
+    .nav-links{
+      display:none; flex-direction:column; align-items:flex-start; gap:0;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--ivory); border-bottom:1px solid var(--sand);
+      padding:8px clamp(20px,5vw,56px) 24px;
+    }
+    .nav-links.mobile-open{ display:flex; }
+    .nav-links a{ width:100%; padding:14px 0; border-bottom:1px solid var(--ivory-dim); }
+    .nav-cta{ display:none; }
+    .nav-cta-mobile{ display:none; width:100%; justify-content:center; margin-top:16px; }
+    .nav-links.mobile-open .nav-cta-mobile{ display:inline-flex; }
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    padding-top:clamp(40px, 8vw, 90px);
+    padding-bottom:clamp(60px, 8vw, 100px);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:clamp(30px,5vw,80px);
+    align-items:center;
+  }
+  .hero-copy .eyebrow{ margin-bottom:22px; display:block; }
+  .hero-copy h1{ margin-bottom:24px; }
+  .hero-copy p{ margin-bottom:36px; font-size:15px; }
+
+  .hero-visual{
+    position:relative;
+    background:var(--sand);
+    aspect-ratio:4/5;
+    display:flex; align-items:center; justify-content:center;
+    margin-left:auto;
+    width:86%;
+  }
+  .hero-visual .frame-note{
+    position:absolute; bottom:16px; left:16px; right:16px;
+    font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink);
+    opacity:0.55;
+  }
+  .hero-visual svg{ width:46%; color:var(--ink); }
+
+  /* ================= PROOF STRIP ================= */
+  .proof{
+    border-top:1px solid var(--sand); border-bottom:1px solid var(--sand);
+    padding-top:22px; padding-bottom:22px;
+  }
+  .proof ul{
+    display:flex; flex-wrap:wrap; gap:14px 40px; justify-content:center;
+  }
+  .proof li{
+    font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray);
+    font-weight:500;
+  }
+  .proof li b{ color:var(--ink); font-weight:500; }
+
+  /* ================= SECTION GENERIC ================= */
+  section{ padding-top:var(--section-pad); padding-bottom:var(--section-pad); }
+  section.on-ink{ background:var(--ink); color:var(--ivory); }
+  section.on-ivory{ background:var(--ivory); }
+  section.on-ivory-dim{ background:var(--ivory-dim); }
+
+  /* ---------- SC philosophy ---------- */
+  .philosophy-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap:60px; align-items:start;
+  }
+  .philosophy-grid h2{ color:var(--ivory); margin-bottom:20px; }
+  .sc-samples{ display:flex; flex-direction:column; gap:0; }
+  .sc-sample{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:20px 0; border-bottom:1px solid #3A3934;
+  }
+  .sc-sample:first-child{ border-top:1px solid #3A3934; }
+  .sc-sample .code{ font-family:var(--display); font-weight:700; color:var(--gold); font-size:15px; letter-spacing:0.04em; }
+  .sc-sample .note{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#9E9B92; }
+
+  /* ---------- Ingredients ---------- */
+  .ingredient{
+    display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(30px,5vw,70px);
+    align-items:center;
+    padding-top:56px; padding-bottom:56px;
+    border-bottom:1px solid var(--sand);
+  }
+  .ingredient:first-of-type{ padding-top:0; }
+  .ingredient:last-of-type{ border-bottom:none; padding-bottom:0; }
+  .ingredient.reverse{ direction:rtl; }
+  .ingredient.reverse > *{ direction:ltr; }
+  .ing-visual{
+    background:var(--ivory-dim);
+    aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .ing-visual svg{ width:38%; color:var(--gray); }
+  .ing-copy .tag{
+    font-size:9px; letter-spacing:0.24em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:14px; display:block; font-weight:500;
+  }
+  .ing-copy h3{ font-family:var(--display); font-weight:700; font-size:1.5rem; margin-bottom:16px; color:var(--ink); }
+  .ing-copy p{ font-size:13.5px; margin-bottom:20px; }
+  .ing-found{ font-size:11px; letter-spacing:0.08em; color:var(--gray); }
+  .ing-found b{ color:var(--ink); font-weight:500; }
+  .ing-found .code{ font-family:var(--display); font-weight:700; color:var(--gold); }
+
+  /* ---------- Concern grid ---------- */
+  .concern-head{ text-align:center; max-width:640px; margin:0 auto 56px; }
+  .concern-head h2{ color:var(--ivory); margin-bottom:14px; }
+  .concern-head p{ margin:0 auto; }
+  .concern-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:#3A3934;
+  }
+  .concern-card{
+    background:var(--ink); padding:34px 26px; min-height:150px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:background .3s ease;
+  }
+  .concern-card:hover{ background:#242320; }
+  .concern-card .cname{ font-family:var(--display); font-weight:400; font-size:1.15rem; color:var(--ivory); }
+  .concern-card .carrow{ font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; }
+  .concern-card svg{ width:13px; height:13px; transition:transform .25s ease; }
+  .concern-card:hover svg{ transform:translateX(4px); }
+
+  /* ---------- Product strip ---------- */
+  .sec-head{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:20px;
+    margin-bottom:48px; flex-wrap:wrap;
+  }
+  .sec-head h2{ margin:0; }
+  .product-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;
+    background:var(--sand);
+  }
+  .p-card{
+    background:var(--ivory); padding:26px; position:relative;
+    display:flex; flex-direction:column;
+  }
+  .p-visual{
+    background:var(--ivory-dim); aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom:20px; position:relative; overflow:hidden;
+  }
+  .p-visual svg{ width:34%; color:var(--gray); transition:opacity .3s ease; }
+  .p-card:hover .p-visual svg{ opacity:0.55; }
+  .p-code{
+    font-family:var(--display); font-weight:700; font-size:11px; letter-spacing:0.06em;
+    color:var(--gold); margin-bottom:10px;
+  }
+  .p-name{ font-size:13.5px; color:var(--ink); font-weight:400; margin-bottom:8px; line-height:1.5; min-height:40px; }
+  .p-tag{ font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray); margin-bottom:16px; }
+  .p-bottom{ display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+  .p-price{ font-size:13px; color:var(--ink); font-weight:500; }
+  .p-link{ font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink); border-bottom:1px solid var(--ink); padding-bottom:2px; }
+
+  /* ---------- Brand story ---------- */
+  .story-grid{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(30px,5vw,80px); align-items:center;
+  }
+  .story-visual{
+    background:var(--ink); aspect-ratio:4/5; display:flex; align-items:center; justify-content:center;
+  }
+  .story-visual svg{ width:34%; color:var(--gold); }
+  .story-copy h2{ margin-bottom:22px; }
+  .story-copy p{ font-size:14px; margin-bottom:28px; max-width:50ch; }
+  .value-list{ display:flex; flex-direction:column; gap:0; }
+  .value-list li{
+    display:flex; gap:18px; padding:16px 0; border-top:1px solid var(--sand);
+    font-size:12.5px; align-items:baseline;
+  }
+  .value-list li:last-child{ border-bottom:1px solid var(--sand); }
+  .value-list .vnum{ font-family:var(--display); font-weight:700; color:var(--gold); font-size:11px; }
+  .value-list .vname{ color:var(--ink); font-weight:500; letter-spacing:0.02em; }
+
+  /* ---------- Social strip ---------- */
+  .social-top{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; flex-wrap:wrap; gap:16px;
+  }
+  .social-handle{ font-family:var(--display); font-weight:700; font-size:1.1rem; }
+  .social-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:2px; background:var(--sand); }
+  .social-tile{ background:var(--ivory-dim); aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; }
+  .social-tile svg{ width:26%; color:var(--gray); }
+
+  /* ================= FOOTER ================= */
+  footer{ background:var(--ink); color:var(--ivory); padding-top:70px; padding-bottom:36px; }
+  .foot-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:60px;
+  }
+  .foot-word{ font-family:var(--display); font-weight:700; font-size:22px; letter-spacing:0.06em; margin-bottom:16px; }
+  .foot-tag{ font-size:12px; color:#9E9B92; max-width:32ch; font-weight:300; }
+  .foot-col h4{
+    font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:#9E9B92;
+    font-family:var(--body); font-weight:500; margin-bottom:18px;
+  }
+  .foot-col a{ display:block; font-size:13px; color:var(--ivory); margin-bottom:12px; font-weight:300; }
+  .foot-bottom{
+    display:flex; justify-content:space-between; padding-top:26px; border-top:1px solid #3A3934;
+    font-size:10px; letter-spacing:0.1em; color:#7A776E; text-transform:uppercase; flex-wrap:wrap; gap:10px;
+  }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:900px){
+    .nav-links, .nav-cta{ display:none; }
+    .burger{ display:block; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ width:100%; order:-1; aspect-ratio:16/10; }
+    .philosophy-grid{ grid-template-columns:1fr; gap:40px; }
+    .ingredient, .ingredient.reverse{ grid-template-columns:1fr; direction:ltr; }
+    .ing-visual{ aspect-ratio:16/9; }
+    .concern-grid{ grid-template-columns:repeat(2,1fr); }
+    .product-grid{ grid-template-columns:repeat(2,1fr); }
+    .story-grid{ grid-template-columns:1fr; }
+    .story-visual{ aspect-ratio:16/9; }
+    .social-grid{ grid-template-columns:repeat(2,1fr); }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:560px){
+    .concern-grid{ grid-template-columns:1fr; }
+    .product-grid{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr; gap:34px; }
+    .proof ul{ justify-content:flex-start; gap:10px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SVG ICON LIBRARY (line-art placeholders standing in for editorial product photography) ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="icon-jar" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="26" y="34" width="48" height="52" rx="3"/>
+      <rect x="30" y="20" width="40" height="14" rx="2"/>
+      <line x1="26" y1="46" x2="74" y2="46"/>
+    </symbol>
+    <symbol id="icon-pump" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="34" y="38" width="32" height="48" rx="3"/>
+      <rect x="42" y="24" width="16" height="16"/>
+      <path d="M50 24 V14 M42 14 H58"/>
+      <path d="M58 14 L70 8"/>
+    </symbol>
+    <symbol id="icon-dropper" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M40 12 H60 V30 L52 40 V78 A8 8 0 0 1 44 86 A8 8 0 0 1 40 78 V40 L32 30 V12 Z" transform="translate(4,0)"/>
+      <line x1="38" y1="12" x2="62" y2="12"/>
+    </symbol>
+    <symbol id="icon-tube" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M38 20 H62 L66 30 V78 A16 10 0 0 1 34 78 V30 Z"/>
+      <line x1="38" y1="20" x2="62" y2="20"/>
+      <line x1="40" y1="14" x2="60" y2="14"/>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M20 78 C20 40 45 16 82 14 C80 52 56 76 20 78 Z"/>
+      <path d="M22 76 C40 60 55 44 80 16"/>
+    </symbol>
+    <symbol id="icon-drop" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M50 12 C64 34 78 50 78 66 A28 28 0 1 1 22 66 C22 50 36 34 50 12 Z"/>
+    </symbol>
+    <symbol id="icon-molecule" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <circle cx="30" cy="30" r="8"/>
+      <circle cx="72" cy="26" r="8"/>
+      <circle cx="50" cy="62" r="8"/>
+      <circle cx="80" cy="72" r="8"/>
+      <line x1="36" y1="34" x2="46" y2="56"/>
+      <line x1="66" y1="30" x2="54" y2="58"/>
+      <line x1="57" y1="66" x2="73" y2="70"/>
+    </symbol>
+    <symbol id="icon-flask" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M42 14 H58 V38 L76 78 A6 6 0 0 1 70 86 H30 A6 6 0 0 1 24 78 L42 38 Z"/>
+      <line x1="40" y1="14" x2="60" y2="14"/>
+      <line x1="34" y1="58" x2="66" y2="58"/>
+    </symbol>
+    <symbol id="icon-camera" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="14" y="30" width="72" height="52" rx="4"/>
+      <circle cx="50" cy="56" r="16"/>
+      <path d="M38 30 L44 20 H56 L62 30"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <polyline points="13 5 20 12 13 19"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#top" class="wordmark">LUORA</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#sklep">Sklep</a>
+      <a href="#skladniki">Składniki</a>
+      <a href="#historia">O nas</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#sklep" class="nav-cta nav-cta-mobile">Zobacz kolekcję</a>
+    </div>
+    <a href="#sklep" class="nav-cta">Zobacz kolekcję</a>
+    <div class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" role="button" tabindex="0"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="on-ivory hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow on-ivory">Wyselekcjonowana kolekcja</span>
+      <h1>Koreańska pielęgnacja.<br>Bez kompromisów.</h1>
+      <p>Wyselekcjonowana kolekcja produktów od marek, którym ufamy — bo sami ich używamy.</p>
+      <a href="#sklep" class="btn light">Zobacz kolekcję <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></a>
+    </div>
+    <div class="hero-visual reveal">
+      <svg viewBox="0 0 100 100"><use href="#icon-pump"/></svg>
+      <div class="frame-note">SC—02 · Anua PDRN Moisturizing Cream</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF STRIP ============ -->
+<div class="proof">
+  <div class="wrap">
+    <ul>
+      <li><b>21</b> produktów</li>
+      <li><b>9</b> marek</li>
+      <li><b>13</b> kluczowych składników</li>
+      <li>Źródła prosto z Korei</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SC PHILOSOPHY ============ -->
+<section class="on-ink" id="sc-philosophy">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—00</span>
+      <span class="label">Kolekcja</span>
+    </div>
+    <div class="philosophy-grid">
+      <div class="reveal">
+        <h2>Każdy produkt<br>ma swój numer.</h2>
+        <p class="on-ink">SC– oznacza naszą wyselekcjonowaną kolekcję. Numerujemy produkty tak, jak galeria numeruje eksponaty — każdy numer jest dowodem, że produkt został świadomie wybrany, nie po prostu dodany do listy. Wybieramy dziewięć marek, nie sto.</p>
+      </div>
+      <div class="sc-samples reveal">
+        <div class="sc-sample"><span class="code">SC—02</span><span class="note">Regeneracja · PDRN</span></div>
+        <div class="sc-sample"><span class="code">SC—07</span><span class="note">Łagodzenie · Centella Asiatica</span></div>
+        <div class="sc-sample"><span class="code">SC—15</span><span class="note">Rozjaśnienie · Kwas Azelainowy</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INGREDIENTS ============ -->
+<section class="on-ivory" id="skladniki">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—01</span>
+      <span class="label">Składniki</span>
+    </div>
+    <h2 style="margin-bottom:56px; max-width:20ch;" class="reveal">Składniki, które znamy na pamięć.</h2>
+
+    <div class="ingredient reveal">
+      <div class="ing-visual"><svg viewBox="0 0 100 100"><use href="#icon-molecule"/></svg></div>
+      <div class="ing-copy">
+        <span class="tag">Hero ingredient</span>
+        <h3>PDRN <span style="color:var(--gray); font-weight:300; font-size:0.85em;">— Polinukleotydy</span></h3>
+        <p>Wspiera regenerację komórkową i produkcję kolagenu. Stymuluje fibroblasty, przyspiesza gojenie i poprawia elastyczność skóry.</p>
+        <div class="ing-found">Znajdziesz w: <b><span class="code">SC–02</span> · <span class="code">SC–03</span> · <span class="code">SC–05</span> · <span class="code">SC–11</span></b></div>
+      </div>
+    </div>
+
+    <div class="ingredient reverse reveal">
+      <div class="ing-visual"><svg viewBox="0 0 100 100"><use href="#icon-dropper"/></svg></div>
+      <div class="ing-copy">
+        <span class="tag">Hero ingredient</span>
+        <h3>Retinal <span style="color:var(--gray); font-weight:300; font-size:0.85em;">— Retinaldehyd</span></h3>
+        <p>Silniejszy od retinolu, łagodniejszy od kwasu retinowego. Przyspiesza odnowę naskórka i wygładza teksturę skóry.</p>
+        <div class="ing-found">Znajdziesz w: <b><span class="code">SC–10</span></b></div>
+      </div>
+    </div>
+
+    <div class="ingredient reveal">
+      <div class="ing-visual"><svg viewBox="0 0 100 100"><use href="#icon-leaf"/></svg></div>
+      <div class="ing-copy">
+        <span class="tag">Hero ingredient</span>
+        <h3>Centella Asiatica <span style="color:var(--gray); font-weight:300; font-size:0.85em;">— Wąkrota azjatycka</span></h3>
+        <p>Łagodzi podrażnienia, redukuje zaczerwienienia i wzmacnia barierę skórną. Jeden z najlepiej przebadanych składników koreańskiej pielęgnacji.</p>
+        <div class="ing-found">Znajdziesz w: <b><span class="code">SC–01</span> · <span class="code">SC–07</span> · <span class="code">SC–08</span></b></div>
+      </div>
+    </div>
+
+    <div class="ingredient reverse reveal">
+      <div class="ing-visual"><svg viewBox="0 0 100 100"><use href="#icon-flask"/></svg></div>
+      <div class="ing-copy">
+        <span class="tag">Hero ingredient</span>
+        <h3>Kwas Azelainowy</h3>
+        <p>Redukuje przebarwienia pozapalne, łagodzi trądzik różowaty i wyrównuje koloryt. Dobrze tolerowany nawet przez skórę wrażliwą.</p>
+        <div class="ing-found">Znajdziesz w: <b><span class="code">SC–15</span></b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONCERN GRID ============ -->
+<section class="on-ink">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—02</span>
+      <span class="label">Zacznij od problemu</span>
+    </div>
+    <div class="concern-head reveal">
+      <h2>Od czego zaczynamy?</h2>
+      <p class="on-ink">Każdy produkt w kolekcji jest otagowany po problemie skóry, nie tylko po kategorii.</p>
+    </div>
+    <div class="concern-grid reveal">
+      <a class="concern-card" href="#sklep"><span class="cname">Nawilżenie</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+      <a class="concern-card" href="#sklep"><span class="cname">Bariera skórna</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+      <a class="concern-card" href="#sklep"><span class="cname">Przebarwienia</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+      <a class="concern-card" href="#sklep"><span class="cname">Trądzik</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+      <a class="concern-card" href="#sklep"><span class="cname">Zmarszczki</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+      <a class="concern-card" href="#sklep"><span class="cname">Matowa cera</span><span class="carrow">Zobacz <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SC WYBRANE / PRODUCTS ============ -->
+<section class="on-ivory" id="sklep">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—03</span>
+      <span class="label">Wybrane</span>
+    </div>
+    <div class="sec-head reveal">
+      <h2>Wybrane z kolekcji.</h2>
+      <a href="#" class="btn light">Wszystkie produkty <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></a>
+    </div>
+
+    <div class="product-grid reveal">
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-pump"/></svg></div>
+        <div class="p-code">SC–02</div>
+        <div class="p-name">Anua PDRN Hyaluronic Acid Moisturizing Cream 60ml</div>
+        <div class="p-tag">PDRN · Kwas hialuronowy</div>
+        <div class="p-bottom"><span class="p-price">89,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-jar"/></svg></div>
+        <div class="p-code">SC–04</div>
+        <div class="p-name">Some By Mi Retinol Bakuchiol Dual Cream 60ml</div>
+        <div class="p-tag">Retinol · Bakuchiol</div>
+        <div class="p-bottom"><span class="p-price">92,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-tube"/></svg></div>
+        <div class="p-code">SC–07</div>
+        <div class="p-name">Dr. Jart+ Cicapair Tiger Grass Color Correcting 50ml</div>
+        <div class="p-tag">Centella Asiatica</div>
+        <div class="p-bottom"><span class="p-price">119,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-dropper"/></svg></div>
+        <div class="p-code">SC–10</div>
+        <div class="p-name">Arencia Retinal Booster Shot Serum 30ml</div>
+        <div class="p-tag">Retinal</div>
+        <div class="p-bottom"><span class="p-price">79,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-dropper"/></svg></div>
+        <div class="p-code">SC–15</div>
+        <div class="p-name">Anua Azelaic Acid 10+ Serum 30ml</div>
+        <div class="p-tag">Kwas Azelainowy 10%</div>
+        <div class="p-bottom"><span class="p-price">75,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+      <div class="p-card">
+        <div class="p-visual"><svg viewBox="0 0 100 100"><use href="#icon-jar"/></svg></div>
+        <div class="p-code">SC–08</div>
+        <div class="p-name">Centellian24 Madeca Cream 100ml</div>
+        <div class="p-tag">Madecassoside</div>
+        <div class="p-bottom"><span class="p-price">69,90 PLN</span><span class="p-link">Zobacz</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND STORY ============ -->
+<section class="on-ivory-dim" id="historia">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—04</span>
+      <span class="label">Dlaczego Luora</span>
+    </div>
+    <div class="story-grid">
+      <div class="story-visual reveal"><svg viewBox="0 0 100 100"><use href="#icon-camera"/></svg></div>
+      <div class="story-copy reveal">
+        <h2>Butik, nie hurtownia.</h2>
+        <p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek — wybieramy dziewięć. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu. Źródła bezpośrednio od koreańskich dostawców, bez pośredników z szarej strefy.</p>
+        <ul class="value-list">
+          <li><span class="vnum">01</span><span class="vname">Kuracja ponad ilość</span></li>
+          <li><span class="vnum">02</span><span class="vname">Autentyczność</span></li>
+          <li><span class="vnum">03</span><span class="vname">Cicha pewność</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOCIAL ============ -->
+<section class="on-ivory">
+  <div class="wrap">
+    <div class="placard reveal">
+      <span class="num">SC—05</span>
+      <span class="label">Luora.kosmetyki</span>
+    </div>
+    <div class="social-top reveal">
+      <span class="social-handle">Śledź nas @luora.kosmetyki</span>
+      <a href="https://www.instagram.com/luora.kosmetyki/" class="btn light">Instagram <svg viewBox="0 0 24 24"><use href="#icon-arrow"/></svg></a>
+    </div>
+    <div class="social-grid reveal">
+      <div class="social-tile"><svg viewBox="0 0 100 100"><use href="#icon-drop"/></svg></div>
+      <div class="social-tile"><svg viewBox="0 0 100 100"><use href="#icon-leaf"/></svg></div>
+      <div class="social-tile"><svg viewBox="0 0 100 100"><use href="#icon-jar"/></svg></div>
+      <div class="social-tile"><svg viewBox="0 0 100 100"><use href="#icon-molecule"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="kontakt">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-word">LUORA</div>
+        <p class="foot-tag">Wyselekcjonowana kolekcja koreańskich kosmetyków dla wymagającego klienta.</p>
+      </div>
+      <div class="foot-col">
+        <h4>O nas</h4>
+        <a href="#">Zespół</a>
+        <a href="#">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/luora.kosmetyki/">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>2026 © Luora</span>
+      <span>SC—01 – SC—21 · Wyselekcjonowana kolekcja</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  function toggleNav(){
+    const open = navLinks.classList.toggle('mobile-open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', toggleNav);
+  burger.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleNav(); } });
+  navLinks.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      if(navLinks.classList.contains('mobile-open')) toggleNav();
+    });
+  });
+
+  // sticky header shadow on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive:true });
+
+  // scroll reveal
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:0.12 });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
