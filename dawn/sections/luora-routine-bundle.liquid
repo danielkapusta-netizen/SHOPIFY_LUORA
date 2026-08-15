@@ -1,5 +1,5 @@
 {% comment %}
-  Luora — "Kompletna rutyna" bundle.
+  Luora — "Zestawy pielęgnacyjne" bundle.
 
   One section instance per routine, so bundles can be reordered and edited
   individually in the theme editor. Each `step` block is one stage of the
@@ -74,7 +74,6 @@
             {%- endif -%}
 
             {%- if step_product != blank -%}
-              {% render 'luora-sc-code', product: step_product %}
               <h3 class="luora-routine__step-title">
                 <a href="{{ step_product.url }}">{{ step_product.title | escape }}</a>
               </h3>
@@ -149,13 +148,13 @@
       "type": "text",
       "id": "total_label",
       "label": "Total label",
-      "default": "Cała rutyna"
+      "default": "Cały zestaw"
     },
     {
       "type": "text",
       "id": "discount_text",
       "label": "Discount text",
-      "default": "Kup całą rutynę i odbierz 10% rabatu z kodem"
+      "default": "Zamów cały zestaw z 10% rabatem – kod"
     },
     {
       "type": "text",

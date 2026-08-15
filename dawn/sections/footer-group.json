@@ -17,19 +17,11 @@
             "heading": "O nas",
             "menu": "footer"
           }
-        },
-        "sc_range": {
-          "type": "text",
-          "settings": {
-            "heading": "",
-            "subtext": "<p>SC—01 – SC—21 · Wyselekcjonowana kolekcja</p>"
-          }
         }
       },
       "block_order": [
         "brand_information",
-        "link_list_o_nas",
-        "sc_range"
+        "link_list_o_nas"
       ],
       "settings": {
         "color_scheme": "scheme-3",

@@ -13,7 +13,7 @@
         "body": {
           "type": "text",
           "settings": {
-            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek — wybieramy dziewięć. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu. Źródła bezpośrednio od koreańskich dostawców, bez pośredników z szarej strefy.</p>"
+            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek – wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu. Sprowadzamy je bezpośrednio od koreańskich dostawców, bez pośredników z szarej strefy.</p>"
           }
         }
       },
@@ -36,7 +36,7 @@
         "value_01": {
           "type": "column",
           "settings": {
-            "title": "01 — Kuracja ponad ilość",
+            "title": "01 – Selekcja ponad ilość",
             "text": "<p>Wybieramy produkty świadomie, nie po to, by wypełnić katalog.</p>",
             "link_label": "",
             "link": ""
@@ -45,8 +45,8 @@
         "value_02": {
           "type": "column",
           "settings": {
-            "title": "02 — Autentyczność",
-            "text": "<p>Źródła bezpośrednio od koreańskich dostawców, bez pośredników.</p>",
+            "title": "02 – Autentyczność",
+            "text": "<p>Sprowadzamy je bezpośrednio od koreańskich dostawców, bez pośredników.</p>",
             "link_label": "",
             "link": ""
           }
@@ -54,8 +54,8 @@
         "value_03": {
           "type": "column",
           "settings": {
-            "title": "03 — Cicha pewność",
-            "text": "<p>Bez hard sellingu, bez hype'u. Produkt mówi sam za siebie.</p>",
+            "title": "03 – Spokojna pewność",
+            "text": "<p>Bez nachalnej sprzedaży i pustych obietnic. Produkt mówi sam za siebie.</p>",
             "link_label": "",
             "link": ""
           }

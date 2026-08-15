@@ -6,14 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Kompletna rutyna.",
+            "heading": "Zestawy pielęgnacyjne.",
             "heading_size": "h1"
           }
         },
         "body": {
           "type": "text",
           "settings": {
-            "text": "<p>Pięć gotowych rutyn — od oczyszczania po ochronę przeciwsłoneczną. Wybierz tę, która odpowiada Twojej skórze, i kup cały zestaw z rabatem 10%.</p>"
+            "text": "<p>Pięć gotowych zestawów – od oczyszczania po ochronę przeciwsłoneczną. Wybierz ten, który odpowiada Twojej skórze, i zamów całość z 10% rabatem.</p>"
           }
         }
       },
@@ -80,9 +80,9 @@
         "color_scheme": "scheme-1",
         "concern_label": "Skóra odwodniona",
         "heading": "Głębokie nawilżenie",
-        "intro": "<p>Rutyna zbudowana wokół PDRN i kwasu hialuronowego. Każdy krok dokłada nawilżenie zamiast je zabierać — od pianki, która nie narusza bariery lipidowej, po krem zamykający wodę w skórze.</p>",
-        "total_label": "Cała rutyna",
-        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "intro": "<p>Zestaw zbudowany wokół PDRN i kwasu hialuronowego. Każdy krok dodaje nawilżenie, zamiast je odbierać – od pianki, która nie narusza bariery lipidowej, po krem zamykający wodę w skórze.</p>",
+        "total_label": "Cały zestaw",
+        "discount_text": "Zamów cały zestaw z 10% rabatem – kod",
         "discount_code": "RUTYNA-NAWILZENIE",
         "note": "",
         "padding_top": 60,
@@ -139,9 +139,9 @@
         "color_scheme": "scheme-2",
         "concern_label": "Skóra wrażliwa i reaktywna",
         "heading": "Odbudowa bariery",
-        "intro": "<p>Ceramidy, wąkrota azjatycka i PDRN w każdym kroku. Rutyna dla skóry, która reaguje zaczerwienieniem i szczypaniem — oczyszczanie olejkiem zamiast pianki, krem odbudowujący warstwę ochronną.</p>",
-        "total_label": "Cała rutyna",
-        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "intro": "<p>Ceramidy, wąkrota azjatycka i PDRN w każdym kroku. Zestaw dla skóry, która reaguje zaczerwienieniem i szczypaniem – oczyszczanie olejkiem zamiast pianki, krem odbudowujący warstwę ochronną.</p>",
+        "total_label": "Cały zestaw",
+        "discount_text": "Zamów cały zestaw z 10% rabatem – kod",
         "discount_code": "RUTYNA-BARIERA",
         "note": "",
         "padding_top": 60,
@@ -184,7 +184,7 @@
           "settings": {
             "step_label": "SPF",
             "product": "round-lab-birch-juice-moisturizing-sunscreen-spf50",
-            "step_note": "Przy przebarwieniach filtr jest najważniejszym krokiem — bez niego witamina C nie zadziała."
+            "step_note": "Przy przebarwieniach filtr jest najważniejszym krokiem – bez niego witamina C nie zadziała."
           }
         }
       },
@@ -199,9 +199,9 @@
         "color_scheme": "scheme-1",
         "concern_label": "Matowa cera i nierówny koloryt",
         "heading": "Rozjaśnienie i przebarwienia",
-        "intro": "<p>Witamina C i NAD⁺ rozjaśniają, a filtr SPF chroni efekt. To najważniejsza para w tej rutynie — witamina C rozjaśnia przebarwienia, filtr zapobiega powstawaniu nowych.</p>",
-        "total_label": "Cała rutyna",
-        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "intro": "<p>Witamina C i NAD⁺ rozjaśniają, a filtr SPF utrwala efekt. To najważniejsze połączenie w tym zestawie – witamina C rozjaśnia przebarwienia, filtr zapobiega powstawaniu nowych.</p>",
+        "total_label": "Cały zestaw",
+        "discount_text": "Zamów cały zestaw z 10% rabatem – kod",
         "discount_code": "RUTYNA-BLASK",
         "note": "",
         "padding_top": 60,
@@ -258,11 +258,11 @@
         "color_scheme": "scheme-2",
         "concern_label": "Trądzik i rozszerzone pory",
         "heading": "Niedoskonałości",
-        "intro": "<p>Kwas glikolowy wygładza i oczyszcza pory, kwas azelainowy redukuje wypryski i zaczerwienienia, a wąkrota azjatycka koi po obu. Rutyna wymagająca, ale dobrze tolerowana.</p>",
-        "total_label": "Cała rutyna",
-        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "intro": "<p>Kwas glikolowy wygładza i oczyszcza pory, kwas azelainowy redukuje wypryski i zaczerwienienia, a wąkrota azjatycka łagodzi po obu. Zestaw wymagający, ale dobrze tolerowany.</p>",
+        "total_label": "Cały zestaw",
+        "discount_text": "Zamów cały zestaw z 10% rabatem – kod",
         "discount_code": "RUTYNA-NIEDOSKONALOSCI",
-        "note": "Nie łącz kwasu glikolowego z azelainowym tego samego wieczoru — stosuj je naprzemiennie, co drugi dzień. Kwasy zwiększają wrażliwość skóry na słońce, więc filtr SPF stosuj codziennie.",
+        "note": "Nie łącz kwasu glikolowego z azelainowym tego samego wieczoru – stosuj je naprzemiennie, co drugi dzień. Kwasy zwiększają wrażliwość skóry na słońce, więc filtr SPF stosuj codziennie.",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -318,9 +318,9 @@
         "color_scheme": "scheme-1",
         "concern_label": "Pierwsze oznaki starzenia",
         "heading": "Jędrność i zmarszczki",
-        "intro": "<p>Kolagen w toniku, kremie i filtrze, a retinal jako jedyny mocny aktyw. Świadomie nie dokładamy drugiego retinoidu do kremu — jeden wystarczy, żeby zobaczyć efekt bez podrażnienia.</p>",
-        "total_label": "Cała rutyna",
-        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "intro": "<p>Kolagen w toniku, kremie i filtrze, a retinal jako jedyny silny składnik aktywny. Świadomie nie dokładamy drugiego retinoidu do kremu – jeden wystarczy, żeby zobaczyć efekt bez podrażnienia.</p>",
+        "total_label": "Cały zestaw",
+        "discount_text": "Zamów cały zestaw z 10% rabatem – kod",
         "discount_code": "RUTYNA-JEDRNOSC",
         "note": "Retinal stosuj wyłącznie wieczorem i zawsze łącz go z filtrem SPF w ciągu dnia.",
         "padding_top": 60,
@@ -333,7 +333,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Nie wiesz, którą rutynę wybrać? Zacznij od problemu, który najbardziej Ci przeszkadza — resztę można dołożyć później.</p>"
+            "text": "<p>Nie wiesz, który zestaw wybrać? Zacznij od problemu, który najbardziej Ci przeszkadza – resztę dobierzesz później.</p>"
           }
         },
         "button": {

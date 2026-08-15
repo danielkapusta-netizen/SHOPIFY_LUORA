@@ -6,10 +6,10 @@
         "color_scheme": "scheme-1",
         "eyebrow": "Wyselekcjonowana kolekcja",
         "heading": "<p>Koreańska pielęgnacja. Bez kompromisów.</p>",
-        "subheading": "Wyselekcjonowana kolekcja produktów od marek, którym ufamy — bo sami ich używamy.",
+        "subheading": "Wyselekcjonowana kolekcja produktów od marek, którym ufamy – bo sami ich używamy.",
         "button_label": "Zobacz kolekcję",
         "button_link": "shopify://collections/wybrane",
-        "proof_line": "63 produkty · 13 marek · źródła z Korei",
+        "proof_line": "63 produkty · 13 marek · prosto z Korei",
         "image": "shopify://shop_images/ChatGPTImageApr23_2026_06_48_25PM.png"
       }
     },
@@ -260,7 +260,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek — wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
+            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek – wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
           }
         },
         "button": {
@@ -298,7 +298,7 @@
         "statement_text": {
           "type": "text",
           "settings": {
-            "text": "<p>Nie sprzedajemy stu marek — wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
+            "text": "<p>Nie sprzedajemy stu marek – wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
           }
         },
         "statement_button": {

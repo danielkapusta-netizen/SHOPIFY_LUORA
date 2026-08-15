@@ -3,8 +3,8 @@
   Ref: luora-brand-positioning-v2.md, luora-website-redesign-concept-v2.md
   Layered on top of Dawn's base.css / component-*.css — overrides only what
   the v2 direction requires (monochrome, Cooper Hewitt display face,
-  size-specific tracking/leading, SC– code treatment, press-not-release
-  button feedback, hairline-on-scroll sticky nav).
+  size-specific tracking/leading, press-not-release button feedback,
+  hairline-on-scroll sticky nav).
 */
 
 @font-face {
@@ -28,9 +28,6 @@
      if the CDN request fails. Overrides theme.liquid's inline definition. */
   --font-heading-family: 'Cooper Hewitt', 'Montserrat', sans-serif;
 
-  /* SC– code accent: a restrained mid-gray, distinct from primary text
-     (pure black) and secondary text (black @ 55%). Not the old gold. */
-  --luora-sc-accent: #7A7A78;
   --luora-hairline: rgba(0, 0, 0, 0.12);
   --luora-text-secondary: rgba(0, 0, 0, 0.55);
 }
@@ -59,22 +56,10 @@ p,
 }
 
 .luora-label,
-.luora-eyebrow,
-.luora-sc-code {
+.luora-eyebrow {
   letter-spacing: 0.1em;
   line-height: 1;
   text-transform: uppercase;
-}
-
-/* ---------- SC– code device ---------- */
-
-.luora-sc-code {
-  font-family: var(--font-heading-family);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--luora-sc-accent);
-  display: block;
-  margin-bottom: 0.6rem;
 }
 
 /* ---------- Hairlines / dividers everywhere replace tinted borders ---------- */
