@@ -221,6 +221,171 @@ button:active {
   }
 }
 
+/* ---------- Kompletna rutyna: routine bundles ---------- */
+
+.luora-routine + .luora-routine .luora-routine__header {
+  border-top: 1px solid var(--luora-hairline);
+  padding-top: 4.8rem;
+}
+
+.luora-routine__header {
+  max-width: 60ch;
+  margin-bottom: 4rem;
+}
+
+.luora-routine__eyebrow {
+  color: var(--luora-text-secondary);
+  display: block;
+  margin-bottom: 1.6rem;
+}
+
+.luora-routine__heading {
+  margin: 0 0 1.6rem;
+}
+
+.luora-routine__intro {
+  color: var(--luora-text-secondary);
+  margin: 0;
+}
+
+.luora-routine__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--luora-hairline);
+}
+
+.luora-routine__step {
+  display: grid;
+  grid-template-columns: 3.2rem 12rem 1fr;
+  gap: 2.4rem;
+  align-items: center;
+  padding: 2.4rem 0;
+  border-bottom: 1px solid var(--luora-hairline);
+}
+
+.luora-routine__step-index {
+  color: var(--luora-text-secondary);
+  align-self: start;
+  padding-top: 0.4rem;
+}
+
+.luora-routine__step-media img,
+.luora-routine__step-placeholder svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.luora-routine__step-placeholder svg {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.luora-routine__step-label {
+  color: var(--luora-text-secondary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.luora-routine__step-title {
+  font-family: var(--font-body-family);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+  max-width: 52ch;
+}
+
+.luora-routine__step-title a {
+  color: rgb(var(--color-foreground));
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.luora-routine__step-title a:hover {
+  border-bottom-color: rgb(var(--color-foreground));
+}
+
+.luora-routine__step-price .price {
+  font-size: 1.4rem;
+}
+
+.luora-routine__step-soldout,
+.luora-routine__step-note {
+  color: var(--luora-text-secondary);
+  margin: 0.8rem 0 0;
+  font-size: 1.2rem;
+}
+
+.luora-routine__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1.2rem 3.2rem;
+  padding-top: 2.4rem;
+}
+
+.luora-routine__total {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+}
+
+.luora-routine__total .luora-label {
+  color: var(--luora-text-secondary);
+}
+
+.luora-routine__total-value {
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.01em;
+}
+
+.luora-routine__code {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--luora-text-secondary);
+}
+
+.luora-routine__code-value {
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(var(--color-foreground));
+  border: 1px solid var(--luora-hairline);
+  padding: 0.4rem 1rem;
+  margin-left: 0.6rem;
+  white-space: nowrap;
+}
+
+.luora-routine__note {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--luora-text-secondary);
+  max-width: 70ch;
+}
+
+@media screen and (max-width: 749px) {
+  .luora-routine__step {
+    grid-template-columns: 2.4rem 8rem 1fr;
+    gap: 1.6rem;
+    align-items: start;
+  }
+
+  .luora-routine__footer {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}
+
 /* ---------- Reduced motion: cross-fade instead of slide/spring, no exceptions ---------- */
 
 @media (prefers-reduced-motion: reduce) {

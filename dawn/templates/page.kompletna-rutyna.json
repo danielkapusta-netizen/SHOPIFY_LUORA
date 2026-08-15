@@ -1,0 +1,374 @@
+{
+  "sections": {
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Kompletna rutyna.",
+            "heading_size": "h1"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pięć gotowych rutyn — od oczyszczania po ochronę przeciwsłoneczną. Wybierz tę, która odpowiada Twojej skórze, i kup cały zestaw z rabatem 10%.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "body"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 80,
+        "padding_bottom": 24
+      }
+    },
+    "rutyna_nawilzenie": {
+      "type": "luora-routine-bundle",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Oczyszczanie",
+            "product": "anua-pdrn-hyaluronic-acid-moisturizing-foam-cleanser-150ml"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Tonik",
+            "product": "anua-rice-70-glow-milky-toner"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Serum",
+            "product": "anua-pdrn-hyaluronic-acid-capsule-100-serum"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "step_label": "Krem",
+            "product": "anua-pdrn-hyaluronic-acid-moisturizing-cream-60ml"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "step_label": "SPF",
+            "product": "isntree-hyaluronic-acid-watery-sun-gel-spf50-50-ml"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "concern_label": "Skóra odwodniona",
+        "heading": "Głębokie nawilżenie",
+        "intro": "<p>Rutyna zbudowana wokół PDRN i kwasu hialuronowego. Każdy krok dokłada nawilżenie zamiast je zabierać — od pianki, która nie narusza bariery lipidowej, po krem zamykający wodę w skórze.</p>",
+        "total_label": "Cała rutyna",
+        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "discount_code": "RUTYNA-NAWILZENIE",
+        "note": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rutyna_bariera": {
+      "type": "luora-routine-bundle",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Oczyszczanie",
+            "product": "skin1004-madagascar-centella-light-cleansing-oil-200-ml"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Esencja",
+            "product": "vt-cosmetics-pdrn-100-essence"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Serum",
+            "product": "vt-cosmetics-pdrn-glow-ampoule-100-ml"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "step_label": "Krem",
+            "product": "dr-jart-ceramidin-skin-barrier-moisturizing-cream-50-ml"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "step_label": "SPF",
+            "product": "skin1004-hyalu-cica-water-fit-sun-serum-spf50-50-ml"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "concern_label": "Skóra wrażliwa i reaktywna",
+        "heading": "Odbudowa bariery",
+        "intro": "<p>Ceramidy, wąkrota azjatycka i PDRN w każdym kroku. Rutyna dla skóry, która reaguje zaczerwienieniem i szczypaniem — oczyszczanie olejkiem zamiast pianki, krem odbudowujący warstwę ochronną.</p>",
+        "total_label": "Cała rutyna",
+        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "discount_code": "RUTYNA-BARIERA",
+        "note": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rutyna_blask": {
+      "type": "luora-routine-bundle",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Oczyszczanie",
+            "product": "arencia-fresh-green-rice-mochi-cleanser"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Tonik",
+            "product": "numbuzin-no-9-nad-pdrn-glow-boosting-toner-150-ml"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Serum",
+            "product": "arencia-vitamin-c-booster-shot-30ml"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "step_label": "Krem",
+            "product": "medicube-deep-vita-c-capsule-cream"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "step_label": "SPF",
+            "product": "round-lab-birch-juice-moisturizing-sunscreen-spf50",
+            "step_note": "Przy przebarwieniach filtr jest najważniejszym krokiem — bez niego witamina C nie zadziała."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "concern_label": "Matowa cera i nierówny koloryt",
+        "heading": "Rozjaśnienie i przebarwienia",
+        "intro": "<p>Witamina C i NAD⁺ rozjaśniają, a filtr SPF chroni efekt. To najważniejsza para w tej rutynie — witamina C rozjaśnia przebarwienia, filtr zapobiega powstawaniu nowych.</p>",
+        "total_label": "Cała rutyna",
+        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "discount_code": "RUTYNA-BLASK",
+        "note": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rutyna_niedoskonalosci": {
+      "type": "luora-routine-bundle",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Oczyszczanie",
+            "product": "anua-heartleaf-quercetinol-pore-deep-cleansing-foam"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Booster złuszczający",
+            "product": "arencia-eraser-shot-glycolic-acid-booster"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Serum",
+            "product": "anua-azelaic-acid-10-serum-30-ml"
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "step_label": "Krem",
+            "product": "centellian24-madeca-cream-100ml"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "step_label": "SPF",
+            "product": "round-lab-birch-juice-moisturizing-sun-stick-spf50"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "concern_label": "Trądzik i rozszerzone pory",
+        "heading": "Niedoskonałości",
+        "intro": "<p>Kwas glikolowy wygładza i oczyszcza pory, kwas azelainowy redukuje wypryski i zaczerwienienia, a wąkrota azjatycka koi po obu. Rutyna wymagająca, ale dobrze tolerowana.</p>",
+        "total_label": "Cała rutyna",
+        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "discount_code": "RUTYNA-NIEDOSKONALOSCI",
+        "note": "Nie łącz kwasu glikolowego z azelainowym tego samego wieczoru — stosuj je naprzemiennie, co drugi dzień. Kwasy zwiększają wrażliwość skóry na słońce, więc filtr SPF stosuj codziennie.",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "rutyna_jedrnosc": {
+      "type": "luora-routine-bundle",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "step_label": "Oczyszczanie",
+            "product": "arencia-fresh-rosehip-rice-mochi"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "step_label": "Tonik",
+            "product": "medicube-triple-collagen-toner"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "step_label": "Serum",
+            "product": "arencia-retinal-booster-shot-serum-30ml",
+            "step_note": "Stosuj wieczorem, zaczynając od dwóch razy w tygodniu."
+          }
+        },
+        "s4": {
+          "type": "step",
+          "settings": {
+            "step_label": "Krem",
+            "product": "medicube-collagen-jelly-cream"
+          }
+        },
+        "s5": {
+          "type": "step",
+          "settings": {
+            "step_label": "SPF",
+            "product": "round-lab-camellia-deep-collagen-firming-sun-serum-spf50-50-ml"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "concern_label": "Pierwsze oznaki starzenia",
+        "heading": "Jędrność i zmarszczki",
+        "intro": "<p>Kolagen w toniku, kremie i filtrze, a retinal jako jedyny mocny aktyw. Świadomie nie dokładamy drugiego retinoidu do kremu — jeden wystarczy, żeby zobaczyć efekt bez podrażnienia.</p>",
+        "total_label": "Cała rutyna",
+        "discount_text": "Kup całą rutynę i odbierz 10% rabatu z kodem",
+        "discount_code": "RUTYNA-JEDRNOSC",
+        "note": "Retinal stosuj wyłącznie wieczorem i zawsze łącz go z filtrem SPF w ciągu dnia.",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "outro": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Nie wiesz, którą rutynę wybrać? Zacznij od problemu, który najbardziej Ci przeszkadza — resztę można dołożyć później.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Zobacz całą kolekcję",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "button"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "intro",
+    "rutyna_nawilzenie",
+    "rutyna_bariera",
+    "rutyna_blask",
+    "rutyna_niedoskonalosci",
+    "rutyna_jedrnosc",
+    "outro"
+  ]
+}
