@@ -123,6 +123,104 @@ button:active {
   box-shadow: 0 6px 24px -18px rgba(0, 0, 0, 0.4);
 }
 
+/* ---------- Mega menu: monochrome, hairline-separated, Purito-style columns ---------- */
+
+.mega-menu__content {
+  border-top: 1px solid var(--luora-hairline);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Column headings ("Rodzaj produktu", "Problem skóry", …) read as labels,
+   not bold body text — matches the v2 label scale. */
+.mega-menu__link--level-2 {
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgb(var(--color-foreground));
+  padding-bottom: 1.6rem;
+}
+
+.mega-menu__link--level-2:hover {
+  text-decoration: none;
+}
+
+/* Level-3 links stay quiet until hovered. */
+.mega-menu__list .list-unstyled .mega-menu__link {
+  color: var(--luora-text-secondary);
+  font-size: 1.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.mega-menu__list .list-unstyled .mega-menu__link:hover {
+  color: rgb(var(--color-foreground));
+  text-decoration: none;
+}
+
+/* ---------- Mega menu promo tile ---------- */
+
+.mega-menu__promo {
+  grid-column: span 2;
+}
+
+.mega-menu__promo-link {
+  display: block;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
+}
+
+.mega-menu__promo-media {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 1.4rem;
+}
+
+.mega-menu__promo-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.mega-menu__promo-link:hover .mega-menu__promo-media img {
+  transform: scale(1.03);
+}
+
+.mega-menu__promo-heading {
+  display: block;
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.mega-menu__promo-text {
+  display: block;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--luora-text-secondary);
+}
+
+@media screen and (max-width: 1200px) {
+  .mega-menu__promo {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mega-menu__promo-link:hover .mega-menu__promo-media img {
+    transform: none;
+  }
+}
+
 /* ---------- Reduced motion: cross-fade instead of slide/spring, no exceptions ---------- */
 
 @media (prefers-reduced-motion: reduce) {

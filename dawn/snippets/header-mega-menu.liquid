@@ -66,6 +66,39 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+                  {%- comment -%}
+                    Luora: optional promo tile pinned to the right of the link
+                    columns, on whichever top-level item is named in
+                    settings.mega_promo_item. Dawn's mega menu is links-only
+                    by default; this adds the Purito-style image panel.
+                  {%- endcomment -%}
+                  {%- if section.settings.mega_promo_image != blank
+                      and section.settings.mega_promo_item != blank
+                      and link.title == section.settings.mega_promo_item
+                  -%}
+                    {%- assign promo_alt = section.settings.mega_promo_heading | default: link.title -%}
+                    <li class="mega-menu__promo">
+                      <a href="{{ section.settings.mega_promo_link | default: link.url }}" class="mega-menu__promo-link">
+                        <span class="mega-menu__promo-media">
+                          {{
+                            section.settings.mega_promo_image
+                            | image_url: width: 700
+                            | image_tag: loading: 'lazy', sizes: '(min-width: 990px) 30vw, 100vw', alt: promo_alt
+                          }}
+                        </span>
+                        {%- if section.settings.mega_promo_heading != blank -%}
+                          <span class="mega-menu__promo-heading">
+                            {{- section.settings.mega_promo_heading | escape -}}
+                          </span>
+                        {%- endif -%}
+                        {%- if section.settings.mega_promo_text != blank -%}
+                          <span class="mega-menu__promo-text">
+                            {{- section.settings.mega_promo_text | escape -}}
+                          </span>
+                        {%- endif -%}
+                      </a>
+                    </li>
+                  {%- endif -%}
                 </ul>
               </div>
             </details>

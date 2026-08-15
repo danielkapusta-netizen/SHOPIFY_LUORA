@@ -9,22 +9,81 @@
         "subheading": "Wyselekcjonowana kolekcja produktów od marek, którym ufamy — bo sami ich używamy.",
         "button_label": "Zobacz kolekcję",
         "button_link": "shopify://collections/wybrane",
-        "proof_line": "21 produktów · 9 marek · źródła z Korei",
-        "image": ""
+        "proof_line": "63 produkty · 13 marek · źródła z Korei",
+        "image": "shopify://shop_images/ChatGPTImageApr23_2026_06_48_25PM.png"
       }
     },
-    "selected_products": {
+    "kategorie": {
+      "type": "collection-list",
+      "blocks": {
+        "c_oczyszczanie": {
+          "type": "featured_collection",
+          "settings": { "collection": "oczyszczanie" }
+        },
+        "c_tonery": {
+          "type": "featured_collection",
+          "settings": { "collection": "tonery" }
+        },
+        "c_serum": {
+          "type": "featured_collection",
+          "settings": { "collection": "serum" }
+        },
+        "c_kremy": {
+          "type": "featured_collection",
+          "settings": { "collection": "kremy" }
+        },
+        "c_pod_oczy": {
+          "type": "featured_collection",
+          "settings": { "collection": "pod-oczy" }
+        },
+        "c_maski": {
+          "type": "featured_collection",
+          "settings": { "collection": "maski" }
+        },
+        "c_makijaz": {
+          "type": "featured_collection",
+          "settings": { "collection": "makijaz" }
+        },
+        "c_urzadzenia": {
+          "type": "featured_collection",
+          "settings": { "collection": "urzadzenia" }
+        }
+      },
+      "block_order": [
+        "c_oczyszczanie",
+        "c_tonery",
+        "c_serum",
+        "c_kremy",
+        "c_pod_oczy",
+        "c_maski",
+        "c_makijaz",
+        "c_urzadzenia"
+      ],
+      "settings": {
+        "title": "Kupuj według kategorii",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 48
+      }
+    },
+    "bestsellery": {
       "type": "featured-collection",
       "settings": {
-        "collection": "wybrane",
-        "products_to_show": 4,
-        "title": "Wybrane z kolekcji.",
+        "collection": "bestsellery",
+        "products_to_show": 8,
+        "title": "Bestsellery",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
@@ -36,9 +95,201 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "skladniki": {
+      "type": "multirow",
+      "blocks": {
+        "row_pdrn": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_03_06PM.png",
+            "caption": "Linia składnikowa",
+            "heading": "PDRN",
+            "text": "<p>Polinukleotydy wspierają regenerację komórkową i produkcję kolagenu. Stymulują fibroblasty, przyspieszają gojenie i poprawiają elastyczność skóry.</p>",
+            "button_label": "Zobacz produkty",
+            "button_link": "shopify://collections/pdrn"
+          }
+        },
+        "row_centella": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_47_49PM.png",
+            "caption": "Linia składnikowa",
+            "heading": "Centella Asiatica",
+            "text": "<p>Łagodzi podrażnienia, redukuje zaczerwienienia i wzmacnia barierę skórną. Jeden z najlepiej przebadanych składników koreańskiej pielęgnacji.</p>",
+            "button_label": "Zobacz produkty",
+            "button_link": "shopify://collections/centella-asiatica"
+          }
+        },
+        "row_retinal": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageApr23_2026_06_55_51PM.png",
+            "caption": "Linia składnikowa",
+            "heading": "Retinol i Retinal",
+            "text": "<p>Retinal działa silniej od retinolu i łagodniej od kwasu retinowego. Przyspiesza odnowę naskórka i wygładza teksturę skóry.</p>",
+            "button_label": "Zobacz produkty",
+            "button_link": "shopify://collections/retinol-retinal"
+          }
+        },
+        "row_kolagen": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_35_19PM.png",
+            "caption": "Linia składnikowa",
+            "heading": "Kolagen",
+            "text": "<p>Poprawia jędrność i elastyczność skóry. W koreańskich formułach łączony z peptydami i NAD+ dla lepszego wchłaniania.</p>",
+            "button_label": "Zobacz produkty",
+            "button_link": "shopify://collections/kolagen"
+          }
+        }
+      },
+      "block_order": [
+        "row_pdrn",
+        "row_centella",
+        "row_retinal",
+        "row_kolagen"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "image_layout": "alternate-left",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-2",
+        "row_color_scheme": "scheme-2",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "problem_skory": {
+      "type": "collection-list",
+      "blocks": {
+        "p_nawilzenie": {
+          "type": "featured_collection",
+          "settings": { "collection": "nawilzenie" }
+        },
+        "p_bariera": {
+          "type": "featured_collection",
+          "settings": { "collection": "bariera-skorna" }
+        },
+        "p_przebarwienia": {
+          "type": "featured_collection",
+          "settings": { "collection": "przebarwienia" }
+        },
+        "p_tradzik": {
+          "type": "featured_collection",
+          "settings": { "collection": "tradzik" }
+        },
+        "p_zmarszczki": {
+          "type": "featured_collection",
+          "settings": { "collection": "zmarszczki" }
+        },
+        "p_matowa": {
+          "type": "featured_collection",
+          "settings": { "collection": "matowa-cera" }
+        }
+      },
+      "block_order": [
+        "p_nawilzenie",
+        "p_bariera",
+        "p_przebarwienia",
+        "p_tradzik",
+        "p_zmarszczki",
+        "p_matowa"
+      ],
+      "settings": {
+        "title": "Zacznij od problemu",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "padding_top": 72,
+        "padding_bottom": 48
+      }
+    },
+    "nowosci": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "nowosci",
+        "products_to_show": 8,
+        "title": "Nowości",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "historia": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Butik, nie hurtownia.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek — wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Poznaj naszą selekcję",
+            "button_link": "shopify://pages/o-nas"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_42_50PM.png",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "statement": {
@@ -47,14 +298,14 @@
         "statement_text": {
           "type": "text",
           "settings": {
-            "text": "<p>Nie sprzedajemy stu marek — wybieramy dziewięć. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
+            "text": "<p>Nie sprzedajemy stu marek — wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
           }
         },
         "statement_button": {
           "type": "button",
           "settings": {
-            "button_label": "Poznaj naszą selekcję",
-            "button_link": "shopify://pages/o-nas",
+            "button_label": "Zobacz całą kolekcję",
+            "button_link": "shopify://collections/all",
             "button_style_secondary": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -78,7 +329,12 @@
   },
   "order": [
     "luora_hero",
-    "selected_products",
+    "kategorie",
+    "bestsellery",
+    "skladniki",
+    "problem_skory",
+    "nowosci",
+    "historia",
     "statement"
   ]
 }

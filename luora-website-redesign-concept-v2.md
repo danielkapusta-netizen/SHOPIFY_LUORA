@@ -3,6 +3,16 @@
 > Direction change: monochrome palette · radical simplification · Apple design principles applied
 > Version: 2026-08 · For: luora.pl · Status: concept only — no code yet, build comes next
 
+> **Amendment, 2026-08 (post-build):** §02's four-section homepage rule is no
+> longer what ships. In review the four-section page read as empty against a
+> 63-product catalogue, so the built homepage is deliberately content-rich
+> (hero · category tiles · bestsellers · ingredient rows · concern tiles ·
+> new arrivals · brand story · statement) and the shop is divided into
+> Purito-style browsable categories (Rodzaj produktu / Problem skóry / Linia
+> składnikowa) surfaced through a mega menu. **The monochrome palette (§01),
+> the typography discipline (§04), and the interaction principles (§05) all
+> still stand — only the section-count restraint in §02 was overridden.**
+
 ---
 
 ## 00 — What Changed and Why
