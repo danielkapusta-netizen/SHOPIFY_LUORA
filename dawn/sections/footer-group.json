@@ -4,20 +4,45 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "brand_information": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_o_nas": {
+          "type": "link_list",
+          "settings": {
+            "heading": "O nas",
+            "menu": "footer"
+          }
+        },
+        "sc_range": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subtext": "<p>SC—01 – SC—21 · Wyselekcjonowana kolekcja</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information",
+        "link_list_o_nas",
+        "sc_range"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
+        "color_scheme": "scheme-3",
+        "newsletter_enable": false,
         "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
-        "show_policy": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
         "margin_top": 0,
-        "padding_top": 36,
+        "padding_top": 72,
         "padding_bottom": 36
       }
     }

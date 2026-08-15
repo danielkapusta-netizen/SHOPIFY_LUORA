@@ -1,0 +1,90 @@
+{
+  "sections": {
+    "story": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Butik, nie hurtownia.",
+            "heading_size": "h1"
+          }
+        },
+        "body": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek — wybieramy dziewięć. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu. Źródła bezpośrednio od koreańskich dostawców, bez pośredników z szarej strefy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "body"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 80,
+        "padding_bottom": 40
+      }
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "value_01": {
+          "type": "column",
+          "settings": {
+            "title": "01 — Kuracja ponad ilość",
+            "text": "<p>Wybieramy produkty świadomie, nie po to, by wypełnić katalog.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "value_02": {
+          "type": "column",
+          "settings": {
+            "title": "02 — Autentyczność",
+            "text": "<p>Źródła bezpośrednio od koreańskich dostawców, bez pośredników.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "value_03": {
+          "type": "column",
+          "settings": {
+            "title": "03 — Cicha pewność",
+            "text": "<p>Bez hard sellingu, bez hype'u. Produkt mówi sam za siebie.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "value_01",
+        "value_02",
+        "value_03"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_width": "third",
+        "image_ratio": "square",
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 80
+      }
+    }
+  },
+  "order": [
+    "story",
+    "values"
+  ]
+}

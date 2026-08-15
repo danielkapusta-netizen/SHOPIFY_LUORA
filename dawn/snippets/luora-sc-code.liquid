@@ -1,0 +1,25 @@
+{% comment %}
+  Renders the Luora "SC–" collection code as an editorial device.
+  Reads a tag formatted like "sc-02" (case-insensitive) off the product and
+  renders it as "SC—02". Renders nothing if the product has no such tag.
+
+  Accepts:
+  - product: {Object} Product Liquid object
+
+  Usage:
+  {% render 'luora-sc-code', product: card_product %}
+{% endcomment %}
+{%- liquid
+  assign sc_tag = blank
+  for tag in product.tags
+    assign tag_downcase = tag | downcase
+    if tag_downcase contains 'sc-'
+      assign sc_tag = tag_downcase
+      break
+    endif
+  endfor
+-%}
+{%- if sc_tag != blank -%}
+  {%- assign sc_number = sc_tag | remove: 'sc-' | strip -%}
+  <span class="luora-sc-code">SC&mdash;{{ sc_number }}</span>
+{%- endif -%}
