@@ -1,16 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "luora_hero": {
       "type": "luora-hero",
       "settings": {
-        "color_scheme": "scheme-1",
-        "eyebrow": "Wyselekcjonowana kolekcja",
-        "heading": "<p>Koreańska pielęgnacja. Bez kompromisów.</p>",
-        "subheading": "Wyselekcjonowana kolekcja produktów od marek, którym ufamy – bo sami ich używamy.",
-        "button_label": "Zobacz kolekcję",
+        "color_scheme": "scheme-4",
+        "eyebrow": "LUORA",
+        "heading": "<p>Koreańskie kosmetyki</p>",
+        "subheading": "Sprawdź wyselekcjonowaną kolekcję naszych koreańskich kosmetyków",
+        "button_label": "Sklep",
         "button_link": "shopify://collections/wybrane",
-        "proof_line": "63 produkty · 13 marek · prosto z Korei",
-        "image": "shopify://shop_images/ChatGPTImageApr23_2026_06_48_25PM.png"
+        "proof_line": "",
+        "image": "shopify://shop_images/a9517373-a08a-4832-966e-3cce284a8c16.png",
+        "image_height": "large",
+        "image_overlay_opacity": 35,
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left"
       }
     },
     "kategorie": {
@@ -18,35 +31,51 @@
       "blocks": {
         "c_oczyszczanie": {
           "type": "featured_collection",
-          "settings": { "collection": "oczyszczanie" }
+          "settings": {
+            "collection": "oczyszczanie"
+          }
         },
         "c_tonery": {
           "type": "featured_collection",
-          "settings": { "collection": "tonery" }
+          "settings": {
+            "collection": "tonery"
+          }
         },
         "c_serum": {
           "type": "featured_collection",
-          "settings": { "collection": "serum" }
+          "settings": {
+            "collection": "serum"
+          }
         },
         "c_kremy": {
           "type": "featured_collection",
-          "settings": { "collection": "kremy" }
+          "settings": {
+            "collection": "kremy"
+          }
         },
         "c_pod_oczy": {
           "type": "featured_collection",
-          "settings": { "collection": "pod-oczy" }
+          "settings": {
+            "collection": "pod-oczy"
+          }
         },
         "c_maski": {
           "type": "featured_collection",
-          "settings": { "collection": "maski" }
+          "settings": {
+            "collection": "maski"
+          }
         },
         "c_makijaz": {
           "type": "featured_collection",
-          "settings": { "collection": "makijaz" }
+          "settings": {
+            "collection": "makijaz"
+          }
         },
         "c_urzadzenia": {
           "type": "featured_collection",
-          "settings": { "collection": "urzadzenia" }
+          "settings": {
+            "collection": "urzadzenia"
+          }
         }
       },
       "block_order": [
@@ -60,7 +89,7 @@
         "c_urzadzenia"
       ],
       "settings": {
-        "title": "Kupuj według kategorii",
+        "title": "",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 4,
@@ -175,27 +204,39 @@
       "blocks": {
         "p_nawilzenie": {
           "type": "featured_collection",
-          "settings": { "collection": "nawilzenie" }
+          "settings": {
+            "collection": "nawilzenie"
+          }
         },
         "p_bariera": {
           "type": "featured_collection",
-          "settings": { "collection": "bariera-skorna" }
+          "settings": {
+            "collection": "bariera-skorna"
+          }
         },
         "p_przebarwienia": {
           "type": "featured_collection",
-          "settings": { "collection": "przebarwienia" }
+          "settings": {
+            "collection": "przebarwienia"
+          }
         },
         "p_tradzik": {
           "type": "featured_collection",
-          "settings": { "collection": "tradzik" }
+          "settings": {
+            "collection": "tradzik"
+          }
         },
         "p_zmarszczki": {
           "type": "featured_collection",
-          "settings": { "collection": "zmarszczki" }
+          "settings": {
+            "collection": "zmarszczki"
+          }
         },
         "p_matowa": {
           "type": "featured_collection",
-          "settings": { "collection": "matowa-cera" }
+          "settings": {
+            "collection": "matowa-cera"
+          }
         }
       },
       "block_order": [
@@ -207,7 +248,7 @@
         "p_matowa"
       ],
       "settings": {
-        "title": "Zacznij od problemu",
+        "title": "Sprawdź nasze polecane produkty dla",
         "heading_size": "h2",
         "image_ratio": "square",
         "columns_desktop": 3,
@@ -246,85 +287,6 @@
         "padding_top": 48,
         "padding_bottom": 48
       }
-    },
-    "historia": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Butik, nie hurtownia.",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Luora to efekt lat fascynacji koreańską kulturą pielęgnacji. Nie sprzedajemy stu marek – wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
-          }
-        },
-        "button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Poznaj naszą selekcję",
-            "button_link": "shopify://pages/o-nas"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_42_50PM.png",
-        "height": "large",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
-    "statement": {
-      "type": "rich-text",
-      "blocks": {
-        "statement_text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Nie sprzedajemy stu marek – wybieramy kilkanaście. Każdy produkt przechodzi przez naszą selekcję, zanim trafi do sklepu.</p>"
-          }
-        },
-        "statement_button": {
-          "type": "button",
-          "settings": {
-            "button_label": "Zobacz całą kolekcję",
-            "button_link": "shopify://collections/all",
-            "button_style_secondary": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "statement_text",
-        "statement_button"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
@@ -333,8 +295,6 @@
     "bestsellery",
     "skladniki",
     "problem_skory",
-    "nowosci",
-    "historia",
-    "statement"
+    "nowosci"
   ]
 }
