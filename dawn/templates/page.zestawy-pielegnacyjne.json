@@ -37,21 +37,21 @@
           "type": "step",
           "settings": {
             "step_label": "Oczyszczanie",
-            "product": "anua-pdrn-hyaluronic-acid-moisturizing-foam-cleanser-150ml"
+            "product": "skin1004-madagascar-centella-light-cleansing-oil-200-ml"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
             "step_label": "Tonik",
-            "product": "anua-rice-70-glow-milky-toner"
+            "product": "numbuzin-no-9-nad-pdrn-glow-boosting-toner-150-ml"
           }
         },
         "s3": {
           "type": "step",
           "settings": {
             "step_label": "Serum",
-            "product": "anua-pdrn-hyaluronic-acid-capsule-100-serum"
+            "product": "anua-pdrn-collagen-glow-facial-serum-spray-100-ml"
           }
         },
         "s4": {
@@ -103,7 +103,7 @@
           "type": "step",
           "settings": {
             "step_label": "Esencja",
-            "product": "vt-cosmetics-pdrn-100-essence"
+            "product": "kopher-curepair-ampoule-treatment-20x1-5-ml"
           }
         },
         "s3": {
@@ -117,7 +117,7 @@
           "type": "step",
           "settings": {
             "step_label": "Krem",
-            "product": "dr-jart-ceramidin-skin-barrier-moisturizing-cream-50-ml"
+            "product": "cosrx-comfort-ceramide-cream-80-g"
           }
         },
         "s5": {
@@ -155,7 +155,7 @@
           "type": "step",
           "settings": {
             "step_label": "Oczyszczanie",
-            "product": "arencia-fresh-green-rice-mochi-cleanser"
+            "product": "arencia-fresh-blue-hyssop-rice-mochi"
           }
         },
         "s2": {
@@ -176,14 +176,14 @@
           "type": "step",
           "settings": {
             "step_label": "Krem",
-            "product": "medicube-deep-vita-c-capsule-cream"
+            "product": "dr-jart-cicapair-tiger-grass-color-correcting-treatment-50ml"
           }
         },
         "s5": {
           "type": "step",
           "settings": {
             "step_label": "SPF",
-            "product": "round-lab-birch-juice-moisturizing-sunscreen-spf50",
+            "product": "round-lab-birch-juice-moisturizing-sun-stick-spf50",
             "step_note": "Przy przebarwieniach filtr jest najważniejszym krokiem – bez niego witamina C nie zadziała."
           }
         }
@@ -229,14 +229,14 @@
           "type": "step",
           "settings": {
             "step_label": "Serum",
-            "product": "anua-azelaic-acid-10-serum-30-ml"
+            "product": "vt-cosmetics-azelaic-acid-capsule-cream-50-ml"
           }
         },
         "s4": {
           "type": "step",
           "settings": {
             "step_label": "Krem",
-            "product": "centellian24-madeca-cream-100ml"
+            "product": "cosrx-comfort-ceramide-cream-80-g"
           }
         },
         "s5": {
@@ -274,21 +274,21 @@
           "type": "step",
           "settings": {
             "step_label": "Oczyszczanie",
-            "product": "arencia-fresh-rosehip-rice-mochi"
+            "product": "arencia-fresh-blue-hyssop-rice-mochi"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
             "step_label": "Tonik",
-            "product": "medicube-triple-collagen-toner"
+            "product": "numbuzin-no-9-nad-pdrn-glow-boosting-toner-150-ml"
           }
         },
         "s3": {
           "type": "step",
           "settings": {
             "step_label": "Serum",
-            "product": "arencia-retinal-booster-shot-serum-30ml",
+            "product": "purito-retinol-retinal-2000-nad-serum-30-ml",
             "step_note": "Stosuj wieczorem, zaczynając od dwóch razy w tygodniu."
           }
         },
@@ -296,7 +296,7 @@
           "type": "step",
           "settings": {
             "step_label": "Krem",
-            "product": "medicube-collagen-jelly-cream"
+            "product": "centellian24-madeca-cream-time-reverse-50-ml"
           }
         },
         "s5": {
