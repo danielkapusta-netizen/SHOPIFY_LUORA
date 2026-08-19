@@ -129,76 +129,6 @@
         "padding_bottom": 48
       }
     },
-    "skladniki": {
-      "type": "multirow",
-      "blocks": {
-        "row_pdrn": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_03_06PM.png",
-            "caption": "Linia składnikowa",
-            "heading": "PDRN",
-            "text": "<p>Polinukleotydy wspierają regenerację komórkową i produkcję kolagenu. Stymulują fibroblasty, przyspieszają gojenie i poprawiają elastyczność skóry.</p>",
-            "button_label": "Zobacz produkty",
-            "button_link": "shopify://collections/pdrn"
-          }
-        },
-        "row_centella": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_47_49PM.png",
-            "caption": "Linia składnikowa",
-            "heading": "Centella Asiatica",
-            "text": "<p>Łagodzi podrażnienia, redukuje zaczerwienienia i wzmacnia barierę skórną. Jeden z najlepiej przebadanych składników koreańskiej pielęgnacji.</p>",
-            "button_label": "Zobacz produkty",
-            "button_link": "shopify://collections/centella-asiatica"
-          }
-        },
-        "row_retinal": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageApr23_2026_06_55_51PM.png",
-            "caption": "Linia składnikowa",
-            "heading": "Retinol i Retinal",
-            "text": "<p>Retinal działa silniej od retinolu i łagodniej od kwasu retinowego. Przyspiesza odnowę naskórka i wygładza teksturę skóry.</p>",
-            "button_label": "Zobacz produkty",
-            "button_link": "shopify://collections/retinol-retinal"
-          }
-        },
-        "row_kolagen": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPTImageApr23_2026_07_35_19PM.png",
-            "caption": "Linia składnikowa",
-            "heading": "Kolagen",
-            "text": "<p>Poprawia jędrność i elastyczność skóry. W koreańskich formułach łączony z peptydami i NAD+ dla lepszego wchłaniania.</p>",
-            "button_label": "Zobacz produkty",
-            "button_link": "shopify://collections/kolagen"
-          }
-        }
-      },
-      "block_order": [
-        "row_pdrn",
-        "row_centella",
-        "row_retinal",
-        "row_kolagen"
-      ],
-      "settings": {
-        "image_height": "medium",
-        "desktop_image_width": "medium",
-        "image_layout": "alternate-left",
-        "heading_size": "h2",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-2",
-        "row_color_scheme": "scheme-2",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
-    },
     "problem_skory": {
       "type": "collection-list",
       "blocks": {
@@ -293,7 +223,6 @@
     "luora_hero",
     "kategorie",
     "bestsellery",
-    "skladniki",
     "problem_skory",
     "nowosci"
   ]
