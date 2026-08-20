@@ -132,24 +132,6 @@
     "problem_skory": {
       "type": "collection-list",
       "blocks": {
-        "p_nawilzenie": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "nawilzenie"
-          }
-        },
-        "p_bariera": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "bariera-skorna"
-          }
-        },
-        "p_przebarwienia": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "przebarwienia"
-          }
-        },
         "p_tradzik": {
           "type": "featured_collection",
           "settings": {
@@ -162,20 +144,45 @@
             "collection": "zmarszczki"
           }
         },
+        "p_nawilzenie": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "suchosc-nawilzenie"
+          }
+        },
+        "p_pory": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pory"
+          }
+        },
         "p_matowa": {
           "type": "featured_collection",
           "settings": {
             "collection": "matowa-cera"
           }
+        },
+        "p_pigmentacja": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "przebarwienia"
+          }
+        },
+        "p_zaczerwienienie": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "zaczerwienienie"
+          }
         }
       },
       "block_order": [
-        "p_nawilzenie",
-        "p_bariera",
-        "p_przebarwienia",
         "p_tradzik",
         "p_zmarszczki",
-        "p_matowa"
+        "p_nawilzenie",
+        "p_pory",
+        "p_matowa",
+        "p_pigmentacja",
+        "p_zaczerwienienie"
       ],
       "settings": {
         "title": "Sprawdź nasze polecane produkty dla",
