@@ -65,6 +65,7 @@ This is the throughline for every decision below: **when in doubt, cut, don't de
     "still_functions_as": "An editorial device (per luora-brand-guidelines.md §07) — the monochrome treatment doesn't remove its meaning, just its color"
   },
   "typography": {
+    "SUPERSEDED_2026_09_05": "Display face is now Playfair Display (playfair_display_n7, Shopify-hosted), replacing Cooper Hewitt. Body is Jost (jost_n4), set in the theme editor. The 'typefaces_unchanged' line below records the v2 decision at the time and is no longer current.",
     "typefaces_unchanged": "Cooper Hewitt (display) + Montserrat (body) — no font change",
     "discipline_added": "Size-specific tracking and leading (tight/negative tracking at large display sizes, near-zero to slightly positive at body/label sizes) — see luora-website-redesign-concept-v2.md §04 for exact values"
   }

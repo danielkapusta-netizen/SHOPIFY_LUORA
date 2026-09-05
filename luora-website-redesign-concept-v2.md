@@ -96,6 +96,13 @@ Everything else from v1 — ingredient education, concern-based browsing, full b
 
 ## 04 — Typography, Applied With Apple's Discipline
 
+> **Superseded 2026-09-05 (display face only).** The display face is now **Playfair Display**
+> (Shopify-hosted, `playfair_display_n7`), replacing Cooper Hewitt; the jsDelivr `@font-face`
+> and the `--font-heading-family` override were removed from `dawn/assets/luora-custom.css`.
+> Body text is **Jost** (`jost_n4`), set in the theme editor — not Montserrat, which the live
+> theme has not used for some time. The tracking/leading discipline below still applies, though
+> the negative display tracking was tuned for a geometric sans and may want relaxing on a serif.
+
 Same typefaces as before — Cooper Hewitt (display) and Montserrat (body) aren't being replaced, just disciplined the way Apple disciplines type at every size:
 
 ```json

@@ -2,32 +2,15 @@
   Luora v2 — curatorial precision system
   Ref: luora-brand-positioning-v2.md, luora-website-redesign-concept-v2.md
   Layered on top of Dawn's base.css / component-*.css — overrides only what
-  the v2 direction requires (monochrome, Cooper Hewitt display face,
-  size-specific tracking/leading, press-not-release button feedback,
-  hairline-on-scroll sticky nav).
+  the v2 direction requires (monochrome, size-specific tracking/leading,
+  press-not-release button feedback, hairline-on-scroll sticky nav).
+
+  The display face is whatever settings.type_header_font is set to
+  (Playfair Display), served by Shopify and applied via theme.liquid's
+  --font-heading-family. This file deliberately does not override it.
 */
 
-@font-face {
-  font-family: 'Cooper Hewitt';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@5.2.5/latin-400-normal.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cooper Hewitt';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/cooper-hewitt@5.2.5/latin-700-normal.woff2') format('woff2');
-}
-
 :root {
-  /* Display face is Cooper Hewitt, falling back to the Shopify-hosted
-     heading font (Montserrat Bold, set via settings.type_header_font)
-     if the CDN request fails. Overrides theme.liquid's inline definition. */
-  --font-heading-family: 'Cooper Hewitt', 'Montserrat', sans-serif;
-
   --luora-hairline: rgba(0, 0, 0, 0.12);
   --luora-text-secondary: rgba(0, 0, 0, 0.55);
 }
