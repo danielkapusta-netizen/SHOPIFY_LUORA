@@ -1,0 +1,5 @@
+[2026-09-07T15:33:21Z] STEP 1 START — vendor audit
+[2026-09-07T15:33:2XZ] mcp__Shopify__get-shop-info() -> {"name":"Luora","domain":"luora.pl","email":"luoracosmetics@gmail.com","planName":"Basic","currencyCode":"PLN","timezone":"CEST","country":"Poland"} (confirms connector targets luora.pl)
+[2026-09-07T15:33:2XZ] mcp__Shopify__graphql_query products(first:50) -> 50 edges, hasNextPage=true, endCursor=...9871717...
+[2026-09-07T15:33:2XZ] mcp__Shopify__graphql_query products(first:50, after:<cursor>) -> 23 edges, hasNextPage=false
+[2026-09-07T15:33:2XZ] STEP 1 result: 73 products total, 22 distinct vendor field values (16 real brands + "Luora" store-name mislabel + 5 product-category mislabels). Output written to ./out/vendors.json. Paused for user confirmation per protocol — no writes performed.
