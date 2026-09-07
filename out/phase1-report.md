@@ -32,6 +32,8 @@ Titles, descriptions, images, tags, prices untouched. Verified via `urlRedirects
 
 You confirmed the collection should show **6** products (not the catalog's 7 `vendor="NIDA"` products). Rule: `vendor EQUALS "NIDA" AND product_type NOT_EQUALS "Pielęgnacja ust"` — cleanly excludes only the Overnight Lip Mask (a lip product, never mentioned in the copy), landing on exactly 6. Published to Online Store. Copy pushed verbatim, no edits. Verified: `/collections/nida` → 200, 6 products, `<title>` and `<h1>` render as specified.
 
+**Follow-up edit (post-launch):** at your request, shortened `descriptionHtml` — removed the "Co wyróżnia formuły NIDA" ingredient/PPM list entirely, kept the intro paragraph and "Dla kogo" section verbatim, and replaced the generic routine section with a new "Gotowe rutyny NIDA" section containing two concrete product bundles built from the 6 real products in the collection (regeneration/firmness bundle: Salmon PDRN Peptide Serum + Revive Eye Cream + Youthful Formula™ Ultimate Moisturizing Cream; pigmentation bundle: α-Arbutin TXA Pure Tone Serum + Youthful Formula™ Yam Mucin ABCE Facial Cream). `seo.title`/`seo.description`/`ruleSet`/`sortOrder`/`handle` unchanged. Verified live (after CDN cache refresh) — old text gone, new sections present.
+
 ## Step 4 — Remaining 15 brand collections
 
 Built on your confirmed approach: where Step 1 found mislabeled products, each collection's rule is `VENDOR EQUALS "<brand>" OR TITLE STARTS_WITH "<brand>"` (disjunctive) so the collection reflects the true brand without touching any product data. Where no strays existed, a single `VENDOR EQUALS` rule was used.
