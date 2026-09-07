@@ -1,0 +1,56 @@
+{
+  "mainMenu": {
+    "id": "gid://shopify/Menu/335608512861",
+    "handle": "main-menu",
+    "title": "Main menu",
+    "items": [
+      {
+        "id": "gid://shopify/MenuItem/877277872477", "title": "Sklep", "type": "CATALOG", "url": "/collections/all",
+        "items": [
+          { "id": "gid://shopify/MenuItem/877277905245", "title": "Rodzaj produktu", "type": "HTTP", "url": "/collections/all",
+            "items": [
+              {"id":"gid://shopify/MenuItem/877277938013","title":"Oczyszczanie","type":"COLLECTION","url":"/collections/oczyszczanie","resourceId":"gid://shopify/Collection/707073081693"},
+              {"id":"gid://shopify/MenuItem/877277970781","title":"Tonery i esencje","type":"COLLECTION","url":"/collections/tonery","resourceId":"gid://shopify/Collection/707073147229"},
+              {"id":"gid://shopify/MenuItem/877278003549","title":"Serum i ampułki","type":"COLLECTION","url":"/collections/serum","resourceId":"gid://shopify/Collection/707073245533"},
+              {"id":"gid://shopify/MenuItem/877278036317","title":"Kremy","type":"COLLECTION","url":"/collections/kremy","resourceId":"gid://shopify/Collection/721195237725"},
+              {"id":"gid://shopify/MenuItem/877278069085","title":"Pod oczy","type":"COLLECTION","url":"/collections/pod-oczy","resourceId":"gid://shopify/Collection/721195270493"},
+              {"id":"gid://shopify/MenuItem/877278101853","title":"Ochrona przeciwsłoneczna","type":"COLLECTION","url":"/collections/ochrona-przeciwsloneczna","resourceId":"gid://shopify/Collection/721195303261"},
+              {"id":"gid://shopify/MenuItem/877278200157","title":"Mgiełki","type":"COLLECTION","url":"/collections/mgielki","resourceId":"gid://shopify/Collection/721195401565"},
+              {"id":"gid://shopify/MenuItem/877278232925","title":"Urządzenia","type":"COLLECTION","url":"/collections/urzadzenia","resourceId":"gid://shopify/Collection/721195434333"}
+            ]
+          },
+          { "id": "gid://shopify/MenuItem/877278265693", "title": "Według potrzeb skóry", "type": "HTTP", "url": "/collections/all",
+            "items": [
+              {"id":"gid://shopify/MenuItem/878830977373","title":"Trądzik","type":"COLLECTION","url":"/collections/tradzik","resourceId":"gid://shopify/Collection/721195925853"},
+              {"id":"gid://shopify/MenuItem/878831010141","title":"Anti-Aging / Zmarszczki","type":"COLLECTION","url":"/collections/zmarszczki","resourceId":"gid://shopify/Collection/721195958621"},
+              {"id":"gid://shopify/MenuItem/878831042909","title":"Suchość / Nawilżenie","type":"COLLECTION","url":"/collections/suchosc-nawilzenie","resourceId":"gid://shopify/Collection/721730928989"},
+              {"id":"gid://shopify/MenuItem/878831075677","title":"Kontrola tłuszczu / Pory","type":"COLLECTION","url":"/collections/pory","resourceId":"gid://shopify/Collection/721730765149"},
+              {"id":"gid://shopify/MenuItem/878831108445","title":"Matowość / Rozjaśnienie","type":"COLLECTION","url":"/collections/matowa-cera","resourceId":"gid://shopify/Collection/721195991389"},
+              {"id":"gid://shopify/MenuItem/878831173981","title":"Zaczerwienienie","type":"COLLECTION","url":"/collections/zaczerwienienie","resourceId":"gid://shopify/Collection/721730797917"}
+            ]
+          },
+          { "id": "gid://shopify/MenuItem/877278921053", "title": "Kolekcja", "type": "HTTP", "url": "/collections/all",
+            "items": [
+              {"id":"gid://shopify/MenuItem/877278953821","title":"Wszystkie produkty","type":"CATALOG","url":"/collections/all"},
+              {"id":"gid://shopify/MenuItem/877278986589","title":"Bestsellery","type":"COLLECTION","url":"/collections/bestsellery","resourceId":"gid://shopify/Collection/721196056925"},
+              {"id":"gid://shopify/MenuItem/877279019357","title":"Nowości","type":"COLLECTION","url":"/collections/nowosci","resourceId":"gid://shopify/Collection/721196089693"},
+              {"id":"gid://shopify/MenuItem/877279052125","title":"Wybrane","type":"COLLECTION","url":"/collections/wybrane","resourceId":"gid://shopify/Collection/721193632093"}
+            ]
+          }
+        ]
+      },
+      {"id":"gid://shopify/MenuItem/877279084893","title":"Zestawy pielęgnacyjne","type":"PAGE","url":"/pages/zestawy-pielegnacyjne","resourceId":"gid://shopify/Page/724610318685","items":[]},
+      {"id":"gid://shopify/MenuItem/877279117661","title":"O nas","type":"PAGE","url":"/pages/o-nas","resourceId":"gid://shopify/Page/724610285917","items":[]}
+    ]
+  },
+  "footerMenu": {
+    "id": "gid://shopify/Menu/335608545629",
+    "handle": "footer",
+    "title": "Footer menu",
+    "items": [
+      {"id":"gid://shopify/MenuItem/877177930077","title":"O nas","type":"PAGE","url":"/pages/o-nas","resourceId":"gid://shopify/Page/724610285917","items":[]},
+      {"id":"gid://shopify/MenuItem/877177962845","title":"Kontakt","type":"PAGE","url":"/pages/contact","resourceId":"gid://shopify/Page/711319421277","items":[]},
+      {"id":"gid://shopify/MenuItem/877177995613","title":"Instagram","type":"HTTP","url":"https://www.instagram.com/luora.kosmetyki/","items":[]}
+    ]
+  }
+}

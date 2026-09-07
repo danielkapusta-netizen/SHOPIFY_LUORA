@@ -1,0 +1,36 @@
+[
+  {
+    "id": "gid://shopify/Product/16472317854045",
+    "title": "NIDA Youthful Formula™ Ultimate Moisturizing Cream",
+    "handle": "nida-youthful-formula™-ultimate-moisturizing-cream-100-ml",
+    "vendor": "NIDA",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>NIDA Youthful Formula™ Ultimate Moisturizing Cream to wielozadaniowy krem do twarzy który w jednym kroku pielęgnacyjnym <strong>nawilża</strong>, koi <strong>podrażnienia</strong>, poprawia <strong>jędrność </strong>i <strong>wyrównuje koloryt skóry</strong>. Lekka, szybko wchłaniająca się formuła nie zostawia lepkiej warstwy ani tłustego filmu.</p>",
+    "seo": { "title": null, "description": null },
+    "tags": ["K-beauty", "koreańska pielęgnacja", "krem nawilżający", "NIDA", "viral TikTok"],
+    "new_handle": "nida-youthful-formula-ultimate-moisturizing-cream-100-ml"
+  },
+  {
+    "id": "gid://shopify/Product/16472318935389",
+    "title": "NIDA α-Arbutin TXA Pure Tone Serum 50 ml",
+    "handle": "nida-α-arbutin-txa-pure-tone-serum-50-ml",
+    "vendor": "NIDA",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>NIDA α-Arbutin TXA Pure Tone Serum łączy <strong>alfa-arbutynę</strong> i <strong>kwas traneksamowy</strong> (TXA) w wysokich stężeniach, działając na różne mechanizmy powstawania <strong>przebarwień</strong>. </p>",
+    "seo": { "title": null, "description": null },
+    "tags": ["arbutyna", "K-beauty", "koreańska pielęgnacja", "NIDA", "przebarwienia", "serum rozjaśniające"],
+    "new_handle": "nida-alfa-arbutyna-txa-pure-tone-serum-50-ml"
+  },
+  {
+    "id": "gid://shopify/Product/16472318214493",
+    "title": "NIDA Youthful Formula™ Yam Mucin ABCE Facial Cream 55 ml",
+    "handle": "nida-youthful-formula™-yam-mucin-abce-facial-cream-55-ml",
+    "vendor": "NIDA",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>NIDA Yam Mucin ABCE Facial Cream to krem z roślinną <strong>mucyną </strong>z dzikiego ignamu o rozciągliwej, jedwabistej konsystencji, wzbogacony o komplet witamin A, B, C i E.</p>",
+    "seo": { "title": null, "description": null },
+    "tags": ["K-beauty", "koreańska pielęgnacja", "krem do twarzy", "NIDA", "retinal", "witamina C"],
+    "new_handle": "nida-youthful-formula-yam-mucin-abce-facial-cream-55-ml",
+    "note": "Third malformed handle, confirmed by user for fix alongside the original two."
+  }
+]
