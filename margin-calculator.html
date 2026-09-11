@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allegro Margin Calculator</title>
+<style>
+  :root{
+    --bg:#eceef3;
+    --card:#ffffff;
+    --panel:#f8fafc;
+    --line:#e2e8f0;
+    --line-soft:#eef2f7;
+    --ink:#0f172a;
+    --ink-2:#475569;
+    --ink-3:#64748b;
+    --ink-4:#94a3b8;
+    --green:#059669;
+    --green-bg:#ecfdf5;
+    --green-line:#a7f3d0;
+    --red:#dc2626;
+    --red-bg:#fef2f2;
+    --red-line:#fecaca;
+    --amber:#b45309;
+    --amber-bg:#fffbeb;
+    --amber-line:#fde68a;
+    --radius:12px;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    padding:32px 16px 56px;
+    background:
+      radial-gradient(1200px 600px at 50% -10%, #f7f8fb 0%, transparent 60%),
+      var(--bg);
+    color:var(--ink);
+    font:15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .page{max-width:1080px;margin:0 auto}
+
+  .masthead{text-align:center;margin-bottom:22px}
+  .masthead h1{margin:0 0 6px;font-size:24px;font-weight:700;letter-spacing:-.02em}
+  .masthead p{margin:0;font-size:14px;color:var(--ink-3)}
+
+  .shell{
+    background:var(--card);
+    border-radius:22px;
+    padding:22px;
+    box-shadow:0 1px 2px rgba(15,23,42,.05), 0 12px 40px -12px rgba(15,23,42,.18);
+  }
+
+  .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+  @media (max-width:860px){
+    .grid{grid-template-columns:minmax(0,1fr)}
+    body{padding-top:20px}
+    .shell{padding:16px;border-radius:18px}
+  }
+
+  /* ---------- inputs ---------- */
+  .col-title{
+    margin:0 0 16px;padding-bottom:12px;
+    border-bottom:1px solid var(--line);
+    font-size:16px;font-weight:700;letter-spacing:-.01em;
+  }
+
+  .field{margin-bottom:14px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:420px){.row2{grid-template-columns:1fr}}
+
+  label{display:block;font-size:12.5px;font-weight:500;color:var(--ink-2);margin-bottom:6px}
+
+  input[type=text], input[type=number]{
+    width:100%;padding:11px 12px;
+    border:1px solid var(--line);border-radius:10px;
+    background:#fff;color:var(--ink);
+    font-size:15px;font-family:inherit;font-variant-numeric:tabular-nums;
+    transition:border-color .12s, box-shadow .12s;
+  }
+  input:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(5,150,105,.12)}
+  input::placeholder{color:var(--ink-4)}
+
+  .with-unit{position:relative}
+  .with-unit input{padding-right:44px}
+  .with-unit .unit{
+    position:absolute;right:12px;top:50%;transform:translateY(-50%);
+    font-size:13px;color:var(--ink-4);pointer-events:none;font-weight:500;
+  }
+
+  /* currency segmented control */
+  .seg{display:inline-flex;padding:3px;background:var(--line-soft);border-radius:10px;gap:3px}
+  .seg button{
+    appearance:none;border:0;background:transparent;cursor:pointer;
+    padding:7px 18px;border-radius:8px;
+    font:600 13.5px/1 inherit;color:var(--ink-3);
+    transition:background .12s,color .12s,box-shadow .12s;
+  }
+  .seg button[aria-pressed="true"]{
+    background:#fff;color:var(--ink);
+    box-shadow:0 1px 2px rgba(15,23,42,.12);
+  }
+
+  .fx-line{display:flex;align-items:flex-end;gap:10px}
+  .fx-line .with-unit{flex:1}
+  .btn-ghost{
+    appearance:none;cursor:pointer;white-space:nowrap;
+    border:1px solid var(--line);background:#fff;color:var(--ink-2);
+    padding:11px 13px;border-radius:10px;font:500 13px/1 inherit;
+    transition:border-color .12s,background .12s,color .12s;
+  }
+  .btn-ghost:hover{border-color:#cbd5e1;background:#f8fafc}
+  .btn-ghost:disabled{opacity:.55;cursor:default}
+
+  .hint{margin-top:6px;font-size:11.5px;color:var(--ink-4);min-height:14px}
+  .hint.err{color:var(--red)}
+
+  /* landed cost strip */
+  .strip{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:10px;padding:11px 13px;margin:4px 0 18px;
+  }
+  .strip .k{font-size:12.5px;color:var(--ink-2);font-weight:500}
+  .strip .v{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+
+  /* settings box */
+  .box{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:14px;margin-top:18px;
+  }
+  .box h3{margin:0 0 12px;font-size:13px;font-weight:700;color:var(--ink)}
+  .box .field:last-child{margin-bottom:0}
+
+  /* margin slider */
+  .target-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .target-head .lab{font-size:12.5px;font-weight:500;color:var(--ink-2)}
+  .target-head .val{font-size:17px;font-weight:700;color:var(--green);font-variant-numeric:tabular-nums}
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;cursor:pointer;
+  }
+  input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:999px;background:var(--line)}
+  input[type=range]::-moz-range-track{height:5px;border-radius:999px;background:var(--line)}
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;width:18px;height:18px;margin-top:-6.5px;
+    border-radius:50%;background:var(--green);border:2px solid #fff;
+    box-shadow:0 1px 4px rgba(5,150,105,.5);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:18px;height:18px;border-radius:50%;background:var(--green);border:2px solid #fff;
+    box-shadow:0 1px 4px rgba(5,150,105,.5);
+  }
+  .scale{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-4);margin-top:2px}
+
+  /* ---------- results ---------- */
+  .results{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:16px;padding:20px;height:100%;
+  }
+  .results h2{
+    margin:0 0 16px;text-align:center;
+    font-size:17px;font-weight:700;letter-spacing:-.01em;
+  }
+
+  .hero{text-align:center;padding:6px 0 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .hero .cap{
+    font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-4);
+  }
+  .hero .num{
+    font-size:42px;font-weight:800;color:var(--green);letter-spacing:-.03em;
+    line-height:1.15;margin:6px 0 8px;font-variant-numeric:tabular-nums;
+  }
+  .hero .num.bad{color:var(--red);font-size:22px;font-weight:700;padding:8px 0}
+  .pill{
+    display:inline-block;padding:6px 14px;border-radius:999px;
+    background:var(--green-bg);border:1px solid var(--green-line);color:var(--green);
+    font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums;
+  }
+
+  table{width:100%;border-collapse:collapse}
+  td{padding:7px 0;font-size:13.5px;vertical-align:baseline}
+  td.k{color:var(--ink-2)}
+  td.v{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+  td.sub{padding-left:12px;color:var(--ink-4);font-size:12px}
+  td.sub + td.v{color:var(--ink-4);font-weight:500;font-size:12px}
+  tr.neg td.v{color:var(--red)}
+  tr.total td{border-top:1px solid var(--line);padding-top:11px;font-weight:700;font-size:14.5px}
+  tr.total td.v{color:var(--green)}
+  tr.total.neg td.v{color:var(--red)}
+  .sect-cap{
+    font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-4);margin:18px 0 4px;
+  }
+
+  /* verdict card */
+  .verdict{
+    margin-top:18px;border-radius:var(--radius);padding:15px;
+    border:1px solid var(--line);background:#fff;
+  }
+  .verdict.buy{background:var(--green-bg);border-color:var(--green-line)}
+  .verdict.warn{background:var(--amber-bg);border-color:var(--amber-line)}
+  .verdict.stop{background:var(--red-bg);border-color:var(--red-line)}
+  .verdict-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .badge{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:5px 12px;border-radius:999px;
+    font-size:12px;font-weight:700;letter-spacing:.02em;
+    background:#fff;border:1px solid var(--line);color:var(--ink-2);
+  }
+  .verdict.buy .badge{border-color:var(--green-line);color:var(--green)}
+  .verdict.warn .badge{border-color:var(--amber-line);color:var(--amber)}
+  .verdict.stop .badge{border-color:var(--red-line);color:var(--red)}
+  .dot{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+  .verdict-margin{font-size:20px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-left:auto}
+  .verdict.buy .verdict-margin{color:var(--green)}
+  .verdict.warn .verdict-margin{color:var(--amber)}
+  .verdict.stop .verdict-margin{color:var(--red)}
+  .verdict p{margin:0 0 10px;font-size:13px;line-height:1.5;color:var(--ink-2)}
+  .verdict p:last-child{margin-bottom:0}
+  .verdict .quiet{color:var(--ink-3);font-size:12.5px}
+  .verdict b{color:var(--ink)}
+
+  .foot{
+    margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:11.5px;line-height:1.55;color:var(--ink-4);
+  }
+  .foot code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}
+
+  .actions{margin-top:18px;display:flex;gap:10px;justify-content:flex-end}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <h1>Allegro Margin Calculator</h1>
+    <p>Wholesale price in USD / EUR &rarr; recommended gross selling price in PLN</p>
+  </div>
+
+  <div class="shell">
+    <div class="grid">
+
+      <!-- ============ INPUTS ============ -->
+      <section>
+        <h2 class="col-title">Purchase &amp; Cost Inputs</h2>
+
+        <div class="field">
+          <label id="lab-cur">Purchase currency</label>
+          <div class="seg" role="group" aria-labelledby="lab-cur">
+            <button type="button" id="cur-usd" data-cur="USD" aria-pressed="true">USD</button>
+            <button type="button" id="cur-eur" data-cur="EUR" aria-pressed="false">EUR</button>
+          </div>
+        </div>
+
+        <div class="field row2">
+          <div>
+            <label for="unitCost">Unit cost (<span class="cur-sym">$</span>)</label>
+            <div class="with-unit">
+              <input type="text" id="unitCost" inputmode="decimal" value="12">
+              <span class="unit cur-code">USD</span>
+            </div>
+          </div>
+          <div>
+            <label for="shipCost">Shipping per unit (<span class="cur-sym">$</span>)</label>
+            <div class="with-unit">
+              <input type="text" id="shipCost" inputmode="decimal" value="2.50">
+              <span class="unit cur-code">USD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fxRate">Exchange rate &rarr; PLN (1 <span class="cur-code">USD</span> = ? PLN)</label>
+          <div class="fx-line">
+            <div class="with-unit">
+              <input type="text" id="fxRate" inputmode="decimal" value="4.00">
+              <span class="unit">PLN</span>
+            </div>
+            <button type="button" class="btn-ghost" id="fxFetch">Live rate</button>
+          </div>
+          <div class="hint" id="fxHint">Rates from NBP (table A). You can also type your bank&rsquo;s rate.</div>
+        </div>
+
+        <div class="strip">
+          <span class="k">Landed cost per unit</span>
+          <span class="v" id="landedOut">&mdash;</span>
+        </div>
+
+        <div class="field">
+          <div class="target-head">
+            <span class="lab" id="lab-margin">Target net margin</span>
+            <span class="val" id="marginVal">30%</span>
+          </div>
+          <input type="range" id="marginRange" min="0" max="80" step="1" value="30" aria-labelledby="lab-margin">
+          <div class="scale"><span>0%</span><span>40%</span><span>80%</span></div>
+        </div>
+
+        <div class="box">
+          <h3>Cost &amp; Fee Settings</h3>
+          <div class="field row2">
+            <div>
+              <label for="vat">VAT (%)</label>
+              <div class="with-unit">
+                <input type="text" id="vat" inputmode="decimal" value="23">
+                <span class="unit">%</span>
+              </div>
+            </div>
+            <div>
+              <label for="commission">Allegro commission (%)</label>
+              <div class="with-unit">
+                <input type="text" id="commission" inputmode="decimal" value="15">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+          <div class="field row2">
+            <div>
+              <label for="packaging">Packaging &amp; handling</label>
+              <div class="with-unit">
+                <input type="text" id="packaging" inputmode="decimal" value="1">
+                <span class="unit">PLN</span>
+              </div>
+            </div>
+            <div>
+              <label for="duty">Customs duty (%)</label>
+              <div class="with-unit">
+                <input type="text" id="duty" inputmode="decimal" value="0">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>Check a Real Offer</h3>
+          <div class="field">
+            <label for="marketPrice">Actual Allegro price, gross (PLN)</label>
+            <div class="with-unit">
+              <input type="text" id="marketPrice" inputmode="decimal" placeholder="e.g. 89.99">
+              <span class="unit">PLN</span>
+            </div>
+            <div class="hint">The price competitors sell at &mdash; drives the buy / skip verdict.</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn-ghost" id="resetBtn">Reset to defaults</button>
+        </div>
+      </section>
+
+      <!-- ============ RESULTS ============ -->
+      <section>
+        <div class="results">
+          <h2>Pricing Result</h2>
+
+          <div class="hero">
+            <div class="cap">Recommended gross price</div>
+            <div class="num" id="recPrice">&mdash;</div>
+            <span class="pill" id="recPill">&mdash;</span>
+          </div>
+
+          <div class="sect-cap">Unit economics at that price</div>
+          <table id="breakdown"><tbody></tbody></table>
+
+          <div id="verdictHost"></div>
+
+          <div class="foot">
+            Net margin = profit &divide; net revenue (ex-VAT). Commission is charged on the
+            gross price; its own VAT is assumed deductible. Break-even gross price:
+            <b id="beOut">&mdash;</b>.
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var DEFAULTS = {
+    currency:"USD", unitCost:"12", shipCost:"2.50", fxRate:"4.00",
+    vat:"23", commission:"15", packaging:"1", duty:"0",
+    marginRange:"30", marketPrice:""
+  };
+  var FIELDS = ["unitCost","shipCost","fxRate","vat","commission","packaging","duty","marketPrice"];
+  var SYMBOL = { USD:"$", EUR:"€" };
+  var STORE_KEY = "allegro-margin-calc-v1";
+
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { currency:"USD" };
+
+  /* ---------- helpers ---------- */
+
+  // accepts "5,5" / "1 234,56" / "1234.56"; returns NaN when blank or unparseable
+  function num(id){
+    var raw = $(id).value;
+    if (raw === null || String(raw).trim() === "") return NaN;
+    var cleaned = String(raw).replace(/\s/g,"").replace(/ /g,"").replace(",", ".");
+    var n = parseFloat(cleaned);
+    return isFinite(n) ? n : NaN;
+  }
+  function n0(id){ var v = num(id); return isFinite(v) ? v : 0; }
+
+  var plnFmt = new Intl.NumberFormat("pl-PL",{minimumFractionDigits:2,maximumFractionDigits:2});
+  function pln(v){ return plnFmt.format(v) + " zł"; }
+  function src(v){ return SYMBOL[state.currency] + plnFmt.format(v); }
+  function pct(v){ return (v*100).toFixed(1).replace(".", ",") + "%"; }
+
+  /* ---------- model ---------- */
+
+  function model(){
+    var vat  = n0("vat")/100;
+    var comm = n0("commission")/100;
+    var pack = n0("packaging");
+    var duty = n0("duty")/100;
+    var fx   = n0("fxRate");
+    var unit = n0("unitCost");
+    var ship = n0("shipCost");
+    var target = n0("marginRange")/100;
+
+    var costSrc = unit + ship;
+    var goods   = unit * fx;
+    var freight = ship * fx;
+    var dutyPln = (goods + freight) * duty;
+    var landed  = goods + freight + dutyPln;
+    var fixed   = landed + pack;              // per-unit costs that do not scale with price
+
+    // profit(P) = P/(1+vat) - comm*P - fixed
+    // margin(P) = profit / (P/(1+vat))
+    // Solve margin(P) = m  ->  P = fixed / ( (1-m)/(1+vat) - comm )
+    var denom   = (1 - target)/(1+vat) - comm;
+    var beDenom = 1/(1+vat) - comm;
+    var maxMargin = 1 - comm*(1+vat);         // margin as P -> infinity
+
+    return {
+      vat:vat, comm:comm, pack:pack, duty:duty, fx:fx, unit:unit, ship:ship,
+      target:target, costSrc:costSrc, goods:goods, freight:freight, dutyPln:dutyPln,
+      landed:landed, fixed:fixed, maxMargin:maxMargin,
+      recommended: denom > 1e-9 ? fixed/denom : Infinity,
+      breakEven:   beDenom > 1e-9 ? fixed/beDenom : Infinity,
+      feasible:    denom > 1e-9,
+
+      netAt:    function(P){ return P/(1+vat); },
+      commAt:   function(P){ return comm*P; },
+      profitAt: function(P){ return P/(1+vat) - comm*P - fixed; },
+      marginAt: function(P){
+        if (!(P > 0)) return NaN;
+        return (P/(1+vat) - comm*P - fixed) / (P/(1+vat));
+      },
+      // highest landed cost that still hits margin m at gross price P
+      maxLandedAt: function(P, m){ return P*((1-m)/(1+vat) - comm) - pack; }
+    };
+  }
+
+  /* ---------- rendering ---------- */
+
+  function row(tb, k, v, cls){
+    var tr = tb.insertRow();
+    if (cls) tr.className = cls;
+    var a = tr.insertCell(); a.className = (cls && cls.indexOf("sub")>-1) ? "sub" : "k"; a.textContent = k;
+    var b = tr.insertCell(); b.className = "v"; b.textContent = v;
+  }
+
+  function renderBreakdown(m, P){
+    var tb = $("breakdown").tBodies[0];
+    tb.innerHTML = "";
+    if (!isFinite(P) || P <= 0){
+      row(tb, "Enter a valid cost and rate", "—");
+      return;
+    }
+    var net = m.netAt(P), vatAmt = P - net, commAmt = m.commAt(P), profit = m.profitAt(P);
+
+    row(tb, "Gross price (brutto)", pln(P));
+    row(tb, "VAT " + (m.vat*100).toFixed(0) + "%", "−" + pln(vatAmt), "neg");
+    row(tb, "Net revenue", pln(net));
+    row(tb, "Allegro commission " + (m.comm*100).toFixed(1).replace(/\.0$/,"") + "%", "−" + pln(commAmt), "neg");
+    row(tb, "Packaging & handling", "−" + pln(m.pack), "neg");
+    row(tb, "Product landed cost", "−" + pln(m.landed), "neg");
+    row(tb, "unit " + src(m.unit) + " → " + pln(m.goods), "", "sub");
+    row(tb, "shipping " + src(m.ship) + " → " + pln(m.freight), "", "sub");
+    if (m.dutyPln > 0) row(tb, "duty " + (m.duty*100).toFixed(1).replace(/\.0$/,"") + "%", pln(m.dutyPln), "sub");
+    row(tb, "Profit per unit", (profit < 0 ? "−" : "") + pln(Math.abs(profit)),
+        "total" + (profit < 0 ? " neg" : ""));
+
+    var margin = m.marginAt(P);
+    row(tb, "Net margin", isFinite(margin) ? pct(margin) : "—");
+    row(tb, "Return on cost (ROI)", m.landed > 0 ? pct(profit/m.landed) : "—");
+  }
+
+  function renderVerdict(m){
+    var host = $("verdictHost");
+    var Pm = num("marketPrice");
+
+    if (!(m.landed > 0)){
+      host.innerHTML =
+        '<div class="verdict">' +
+          '<div class="verdict-top"><span class="badge"><span class="dot"></span>Waiting on cost</span></div>' +
+          '<p class="quiet">Enter the unit cost and exchange rate to price this product.</p>' +
+        '</div>';
+      return;
+    }
+
+    if (!isFinite(Pm) || Pm <= 0){
+      host.innerHTML =
+        '<div class="verdict">' +
+          '<div class="verdict-top"><span class="badge"><span class="dot"></span>No offer to check</span></div>' +
+          '<p class="quiet">Enter the actual Allegro price under <b>Check a Real Offer</b> to get a buy / skip ' +
+          'recommendation for this product.</p>' +
+        '</div>';
+      return;
+    }
+
+    var margin = m.marginAt(Pm);
+    var profit = m.profitAt(Pm);
+    var target = m.target;
+    var cls, label, line;
+
+    if (!isFinite(margin)){
+      cls = ""; label = "—"; line = "Check your inputs.";
+    } else if (margin < 0){
+      cls = "stop"; label = "DO NOT BUY";
+      line = "Selling at this price loses <b>" + pln(Math.abs(profit)) + "</b> per unit.";
+    } else if (margin < 0.10){
+      cls = "stop"; label = "NOT RECOMMENDED";
+      line = "Below the 10% floor — <b>" + pln(profit) + "</b> per unit does not cover returns, " +
+             "disputes or dead stock.";
+    } else if (margin < target){
+      cls = "warn"; label = "BELOW TARGET";
+      line = "Viable but under your " + (target*100).toFixed(0) + "% target. You would earn <b>" +
+             pln(profit) + "</b> per unit.";
+    } else {
+      cls = "buy"; label = "BUY";
+      line = "Hits your " + (target*100).toFixed(0) + "% target — <b>" + pln(profit) +
+             "</b> profit per unit.";
+    }
+
+    // What could we still afford to pay and hit target at this market price?
+    var maxLanded = m.maxLandedAt(Pm, target);
+    var afford = "";
+    if (m.fx > 0){
+      var maxSrcTotal = maxLanded / (m.fx * (1 + m.duty));
+      if (maxLanded > 0 && maxSrcTotal > 0){
+        var maxUnitSrc = maxSrcTotal - m.ship;
+        afford = maxUnitSrc > 0
+          ? '<p class="quiet">To hit ' + (target*100).toFixed(0) + '% at ' + pln(Pm) +
+            ', pay at most <b>' + src(maxUnitSrc) + '</b> per unit (landed ' + pln(maxLanded) + '). ' +
+            'You are paying ' + src(m.unit) + '.</p>'
+          : '<p class="quiet">Shipping alone (' + src(m.ship) + ') already exceeds the ' +
+            pln(Math.max(maxLanded,0)) + ' landed-cost budget for a ' + (target*100).toFixed(0) +
+            '% margin at this price.</p>';
+      } else {
+        afford = '<p class="quiet">No landed cost can reach ' + (target*100).toFixed(0) +
+                 '% at this price — fees and packaging alone consume the margin.</p>';
+      }
+    }
+
+    var gap = "";
+    if (isFinite(m.recommended)){
+      var diff = Pm - m.recommended;
+      gap = '<p class="quiet">Market price is <b>' + (diff >= 0 ? "+" : "−") + pln(Math.abs(diff)) +
+            '</b> vs. your recommended ' + pln(m.recommended) + '.</p>';
+    }
+
+    host.innerHTML =
+      '<div class="verdict ' + cls + '">' +
+        '<div class="verdict-top">' +
+          '<span class="badge"><span class="dot"></span>' + label + '</span>' +
+          '<span class="verdict-margin">' + (isFinite(margin) ? pct(margin) : "—") + '</span>' +
+        '</div>' +
+        '<p>' + line + '</p>' + gap + afford +
+      '</div>';
+  }
+
+  function render(){
+    var m = model();
+
+    $("landedOut").textContent = m.fx > 0 && m.costSrc > 0
+      ? pln(m.landed) + "  (" + src(m.costSrc) + ")"
+      : "—";
+
+    $("marginVal").textContent = (m.target*100).toFixed(0) + "%";
+
+    var rec = $("recPrice"), pill = $("recPill");
+    if (!m.feasible){
+      rec.className = "num bad";
+      rec.textContent = "Not achievable";
+      pill.textContent = "Max margin at these fees: " + pct(Math.max(m.maxMargin,0));
+      renderBreakdown(m, NaN);
+    } else if (!(m.landed > 0)){
+      rec.className = "num bad";
+      rec.textContent = "Enter cost & rate";
+      pill.textContent = "—";
+      renderBreakdown(m, NaN);
+    } else {
+      rec.className = "num";
+      rec.textContent = pln(m.recommended);
+      pill.textContent = "Profit " + pln(m.profitAt(m.recommended)) + " / unit";
+      renderBreakdown(m, m.recommended);
+    }
+
+    $("beOut").textContent = isFinite(m.breakEven) && m.landed > 0 ? pln(m.breakEven) : "—";
+
+    renderVerdict(m);
+    save();
+  }
+
+  /* ---------- currency ---------- */
+
+  function setCurrency(c){
+    state.currency = c;
+    $("cur-usd").setAttribute("aria-pressed", String(c === "USD"));
+    $("cur-eur").setAttribute("aria-pressed", String(c === "EUR"));
+    Array.prototype.forEach.call(document.querySelectorAll(".cur-sym"), function(el){ el.textContent = SYMBOL[c]; });
+    Array.prototype.forEach.call(document.querySelectorAll(".cur-code"), function(el){ el.textContent = c; });
+    render();
+  }
+
+  /* ---------- NBP live rate ---------- */
+
+  function fetchRate(){
+    var btn = $("fxFetch"), hint = $("fxHint"), code = state.currency.toLowerCase();
+    btn.disabled = true;
+    hint.className = "hint";
+    hint.textContent = "Fetching " + state.currency + "/PLN from NBP…";
+
+    fetch("https://api.nbp.pl/api/exchangerates/rates/a/" + code + "/?format=json", {cache:"no-store"})
+      .then(function(r){ if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function(d){
+        var rate = d && d.rates && d.rates[0];
+        if (!rate || !isFinite(rate.mid)) throw new Error("bad payload");
+        $("fxRate").value = rate.mid.toFixed(4);
+        hint.textContent = "NBP mid rate, table " + d.table + " · " + rate.effectiveDate +
+                           " · add your bank's spread if needed.";
+        render();
+      })
+      .catch(function(){
+        hint.className = "hint err";
+        hint.textContent = "Could not reach NBP — enter the rate manually.";
+      })
+      .finally(function(){ btn.disabled = false; });
+  }
+
+  /* ---------- persistence ---------- */
+
+  function save(){
+    try{
+      var data = { currency: state.currency, marginRange: $("marginRange").value };
+      FIELDS.forEach(function(f){ data[f] = $(f).value; });
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+    }catch(e){ /* private mode / blocked storage */ }
+  }
+
+  function load(){
+    var data = null;
+    try{
+      var raw = localStorage.getItem(STORE_KEY);
+      if (raw) data = JSON.parse(raw);
+    }catch(e){ data = null; }
+    if (!data) return;
+    FIELDS.forEach(function(f){ if (typeof data[f] === "string") $(f).value = data[f]; });
+    if (typeof data.marginRange === "string") $("marginRange").value = data.marginRange;
+    if (data.currency === "EUR" || data.currency === "USD") state.currency = data.currency;
+  }
+
+  function reset(){
+    FIELDS.forEach(function(f){ $(f).value = DEFAULTS[f]; });
+    $("marginRange").value = DEFAULTS.marginRange;
+    $("fxHint").className = "hint";
+    $("fxHint").textContent = "Rates from NBP (table A). You can also type your bank’s rate.";
+    setCurrency(DEFAULTS.currency);
+  }
+
+  /* ---------- wiring ---------- */
+
+  load();
+  FIELDS.forEach(function(f){ $(f).addEventListener("input", render); });
+  $("marginRange").addEventListener("input", render);
+  $("cur-usd").addEventListener("click", function(){ setCurrency("USD"); });
+  $("cur-eur").addEventListener("click", function(){ setCurrency("EUR"); });
+  $("fxFetch").addEventListener("click", fetchRate);
+  $("resetBtn").addEventListener("click", reset);
+
+  setCurrency(state.currency);
+})();
+</script>
+</body>
+</html>
