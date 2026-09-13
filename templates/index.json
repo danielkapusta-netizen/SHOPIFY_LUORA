@@ -674,16 +674,16 @@
           "name": "t:names.collection_card",
           "static": true,
           "settings": {
-            "placement": "on_image",
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
+            "placement": "below_image",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
             "collection_card_gap": 8,
             "background_color": "",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
             "border_color": "",
-            "border_radius": 10
+            "border_radius": 0
           },
           "blocks": {
             "collection_title_zyBdAJ": {
@@ -692,7 +692,7 @@
               "settings": {
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "h5",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -715,7 +715,7 @@
               "type": "_collection-card-image",
               "static": true,
               "settings": {
-                "image_ratio": "portrait",
+                "image_ratio": "square",
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
@@ -724,7 +724,7 @@
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_color": "",
-                "border_radius": 0
+                "border_radius": 100
               },
               "blocks": {}
             }
@@ -740,17 +740,17 @@
       "name": "t:names.collection_list",
       "settings": {
         "collection_list": [],
-        "layout_type": "bento",
+        "layout_type": "carousel",
         "carousel_on_mobile": true,
-        "columns": 4,
+        "columns": 6,
         "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
+        "mobile_card_size": "28cqw",
         "columns_gap": 16,
         "bento_gap": 12,
         "rows_gap": 16,
         "max_collections": 4,
         "icons_style": "arrow",
-        "icons_shape": "none",
+        "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 12,
         "background_color": "{{ settings.color_palette.background }}",
