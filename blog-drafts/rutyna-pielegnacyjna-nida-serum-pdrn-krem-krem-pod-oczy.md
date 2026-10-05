@@ -22,7 +22,7 @@ featured_image_alt: "NIDA Salmon PDRN Peptide Serum 50 ml, NIDA Youthful Formula
 
 # Rutyna pielęgnacyjna NIDA: dlaczego polecamy serum PDRN, krem i krem pod oczy razem
 
-**W skrócie:** rutyna NIDA to trzy produkty i trzy zadania. [Serum Salmon PDRN](/products/nida-salmon-pdrn-peptide-serum-50-ml) dostarcza skórze PDRN i peptydów, [krem Youthful Formula](/products/nida-youthful-formula-ultimate-moisturizing-cream-100-ml) domyka nawilżenie, a [krem pod oczy Revive](/products/nida-revive-eye-cream-40-ml) z retinalem zajmuje się liniami i jędrnością. Razem kosztują 239,70 zł i dają pełną rutynę rano i wieczorem bez dziesięciu dodatkowych kroków.
+**W skrócie:** rutyna NIDA to trzy produkty i trzy zadania. [Serum Salmon PDRN](/products/nida-salmon-pdrn-peptide-serum-50-ml) dostarcza skórze PDRN i peptydów, [krem Youthful Formula](/products/nida-youthful-formula-ultimate-moisturizing-cream-100-ml) domyka nawilżenie, a [krem pod oczy Revive](/products/nida-revive-eye-cream-40-ml) z retinalem zajmuje się liniami i jędrnością. Razem kosztują 239,70 zł (w [zestawie 199 zł](/products/zestaw-nida-salmon-pdrn-serum-youthful-formula-revive-eye-cream)) i dają pełną rutynę rano i wieczorem bez dziesięciu dodatkowych kroków.
 
 Koreańska pielęgnacja kojarzy się z długą listą kroków. W praktyce większość osób potrzebuje mniej: sprawdzonych składników, rozsądnej kolejności i regularności. Dlatego w Luora wybraliśmy z oferty marki NIDA trzy produkty, które uzupełniają się nawzajem i które producent sam zestawia ze sobą. Poniżej wyjaśniamy, co robi każdy z nich, w jakiej kolejności je stosować i dla kogo ta rutyna ma sens.
 
@@ -34,7 +34,8 @@ Koreańska pielęgnacja kojarzy się z długą listą kroków. W praktyce więks
 4. [Krem pod oczy NIDA Revive: retinal tam, gdzie widać pierwsze linie](#krem-pod-oczy-nida-revive)
 5. [Kolejność: rutyna poranna i wieczorna krok po kroku](#kolejnosc-rutyna-poranna-i-wieczorna)
 6. [Dla kogo ta rutyna, a kto powinien uważać](#dla-kogo-ta-rutyna)
-7. [Najczęstsze pytania](#najczestsze-pytania)
+7. [Zestaw NIDA w jednej cenie](#zestaw-nida-w-jednej-cenie)
+8. [Najczęstsze pytania](#najczestsze-pytania)
 
 ## Dlaczego trzy produkty
 
@@ -139,6 +140,10 @@ Krem Revive można stosować zgodnie z tolerancją skóry, ale to wieczór jest 
 
 W razie wątpliwości co do pielęgnacji w ciąży, przy chorobach skóry lub ciężkiej wrażliwości skonsultuj się z lekarzem dermatologiem. Ten artykuł ma charakter informacyjny i nie zastępuje porady medycznej.
 
+## Zestaw NIDA w jednej cenie
+
+Wszystkie trzy produkty kupisz też razem jako [Zestaw NIDA: Salmon PDRN Serum + Youthful Formula Cream + Revive Eye Cream](/products/zestaw-nida-salmon-pdrn-serum-youthful-formula-revive-eye-cream). Kupione osobno kosztują 239,70 zł, w zestawie **199 zł**, czyli o 40,70 zł mniej. To najprostszy sposób, żeby zacząć całą rutynę od razu.
+
 ## Najczęstsze pytania
 
 ### Czy mogę kupić tylko jeden produkt z rutyny?
@@ -171,6 +176,7 @@ Rutyna NIDA działa dlatego, że każdy produkt ma jasne zadanie: serum regeneru
 
 **Sprawdź produkty w sklepie Luora:**
 
+- [Zestaw NIDA: serum + krem + krem pod oczy](/products/zestaw-nida-salmon-pdrn-serum-youthful-formula-revive-eye-cream): 199 zł zamiast 239,70 zł
 - [NIDA Salmon PDRN Peptide Serum 50 ml](/products/nida-salmon-pdrn-peptide-serum-50-ml): 79,90 zł
 - [NIDA Youthful Formula™ Ultimate Moisturizing Cream 100 ml](/products/nida-youthful-formula-ultimate-moisturizing-cream-100-ml): 79,90 zł
 - [NIDA Revive Eye Cream 40 ml](/products/nida-revive-eye-cream-40-ml): 79,90 zł
